@@ -1,0 +1,63 @@
+/* Root declaration */
+:root {
+    /* Font size variations */
+    --font-xs: calc(var(--font-m) * 0.65);
+    --font-s: calc(var(--font-m) * 0.85);
+    --font-m: clamp(1rem, 3vw, 1.2rem);
+    --font-l: calc(var(--font-m) * 1.5);
+    --font-xl: calc(var(--font-m) * 2);
+
+    /* Line height rhythm & variations */
+    --rhythm: 1.5rem;
+    --space-xs: calc(var(--rhythm) * 0.5);
+    --space-s: calc(var(--rhythm) * 0.75);
+    --space-m: var(--rhythm);
+    --space-l: calc(var(--rhythm) * 1.5);
+    --space-xl: calc(var(--rhythm) * 2);
+}
+
+/* Content styles */
+body {
+    font-family: "Overpass";
+    font-size: var(--font-m);
+    max-width: 66ch;
+    line-height: var(--space-m);
+
+    nav {
+        font-size: var(--font-s);
+        line-height: var(--space-xs);
+    }
+
+    h1 {
+        font-size: var(--font-xl);
+        max-width: 40ch;
+        line-height: var(--space-xl);
+    }
+    
+    h2 {
+        font-size: var(--font-l);
+        max-width: 42ch;
+        line-height: var(--space-l);
+    }
+
+    h3 {
+        font-size: var(--font-l);
+        max-width: 45ch;
+        line-height: var(--space-m);
+    }
+
+    h4 {
+        font-size: var(--font-l);
+        max-width: 50ch;
+        line-height: var(--space-s);
+    }
+}
+
+/* Font face declaration */
+@font-face {
+    font-family: "Overpass";
+    src: url('fonts/Overpass-VariableFont_wght.ttf') format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
