@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Properties Practice</title>
+    <style>
+        
+        /* REFLECTION COMMENT
+            Custom properties vs. hard-coded:
+            Honestly this was a bit overwhelming at first,
+            trying to keep track of a bunch of different variables
+            felt like a lot to handle. However, once it was implemented,
+            BOY was it a lot easier to deal with. During development,
+            just as an experiment, I ended up switching the color palette
+            of my site to something completely different, and it was super easy
+            because of the variables! It's shocking just how easy it can be
+            to adjust things on the site when you use custom properties.
+
+            USING CLAMP:
+            So I may need more experience working with clamp, but based
+            on my experimentation with it on this assignment, it seems
+            quite versatile. Similar to custom properties, it can be
+            some work to get to a level where the numbers feel just right,
+            but once you're there, you don't have to worry about it anymore
+            and can use the sizing specifications you made without stress.
+            It's impressive to me how easy it is to implement.
+
+            SCOPED CUSTOM PROPERTIES:
+            Thankfully I didn't encounter many challenges with
+            scoped custom properties; it seemed quite logical.
+            Defining special versions of variables for the colors
+            (like on the card variations) seemed logical since
+            all I had to do was check the nest and I understood
+            how that element differed from the base element.
+            I will say that without nesting, this would probably
+            be a lot harder though. The nesting logic helps my mind
+            understand what's going on FAR better.
+
+            THEME SWITCHING:
+            In an instant, the website looks completely different,
+            and I don't even have to touch any JavaScript to do it!
+            I'm a big fan of dark modes when using the web (I even
+            have a browser extension to automatically trigger them
+            when they exist), so it's impressive how quick to implement
+            the dark mode can be. However, that is reliant on the color
+            choices you've made on your base color palette; after testing
+            with the dark mode for the first time, I had to rework some
+            color usages to make it all look reasonable.
+        */
+
+        /* Basic reset - you can keep or modify this */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Define your custom properties in :root */
+        :root {
+            /* Colors */
+            --primary-color: #6d3ee5;
+            --secondary-color: #3454d8;
+            --background-color: #acfffc;
+            --accent-color-1: #5ddfff;
+            --accent-color-2: #96f5ff;
+            --text-color: #000000;
+            --black: #000000;
+            --white: #ffffff;
+
+            /* Spacing */
+            --spacing-xs: clamp(0.25rem, 1vw, 0.5rem);
+            --spacing-s: clamp(0.5rem, 2vw, 1rem);
+            --spacing-m: clamp(0.75rem, 3vw, 1.5rem);
+            --spacing-l: clamp(1rem, 4vw, 2rem);
+            --spacing-xl: clamp(1.25rem, 5vw, 2.5rem);
+            
+            /* Typography scale */
+            --font-sm: calc(var(--font-base) * 0.85);
+            --font-base: clamp(1rem, 3vw, 1.2rem);
+            --font-lg: calc(var(--font-base) * 1.25);
+            
+            /* Layout values */
+            --max-width: 1200px;
+            --border-radius: 0.75rem;
+            --min-padding: 10px;
+        }
+        
+        /* Define dark theme */
+        [data-theme="dark"] {
+            /* Dark theme color overrides */
+            --primary-color: #b496fd;
+            --secondary-color: #3454d8;
+            --background-color: #000000;
+            --accent-color-1: #24505b;
+            --accent-color-2: #161a57;
+            --text-color: #ffffff;
+            --black: #000000;
+            --white: #ffffff;
+        }
+        
+        /* Your component styles below */
+        html {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: var(--font-base);
+
+            h1 {
+                font-size: var(--font-lg);
+            }
+
+            :is(h2, h3, h4, h5, h6) {
+                font-size: var(--font-base);
+            }
+
+            p {
+                font-size: var(--font-sm);
+            }
+        }
+
+        nav {
+            background-color: var(--primary-color);
+
+            padding-top: var(--spacing-xs);
+            padding-bottom: var(--spacing-xs);
+            padding-left: var(--spacing-m);
+            padding-right: var(--spacing-s);
+
+            .nav-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .nav-list {
+                    display: flex;
+                    flex-direction: row;
+                    list-style: none;
+                    margin: 0;
+                    
+                    li {
+                        padding: var(--min-padding);
+                        
+                        a {
+                            color: var(--accent-color-1);
+
+                            &:hover {
+                                color: var(--white);
+                            }
+
+                            &.active {
+                                color: var(--accent-color-2);
+                            }
+                        }
+                    }
+                }
+
+                h2.nav-logo {
+                    color: var(--background-color);
+                    font-size: var(--font-lg);
+                }
+            }
+        }
+
+        main {
+            padding-top: var(--spacing-xs);
+            padding-bottom: var(--spacing-xs);
+            padding-left: var(--spacing-xs);
+            padding-right: var(--spacing-s);
+        }
+
+        section {
+            padding: 0 var(--spacing-l) var(--spacing-m) var(--spacing-s);
+        }
+
+        .card {
+            --card-background: var(--background-color);
+            --card-text: var(--text-color);
+            --card-border: var(--primary-color);
+
+            background-color: var(--card-background);
+            color: var(--card-text);
+            border-left: 4px solid var(--card-border);
+            margin-top: var(--spacing-s);
+            border-radius: var(--border-radius);
+            box-shadow: 3px 3px;
+
+            border: 2px solid var(--card-border);
+            padding: var(--spacing-xs);
+
+            &.card-featured {
+                --card-background: color-mix(in srgb, var(--accent-color-1) 30%, white);
+                --card-text: color-mix(in srgb, var(--primary-color) 50%, black);
+                border: 2px solid color-mix(in srgb, var(--accent-color-1) 80%, black);
+            }
+
+            &.card-muted {
+                --card-background: color-mix(in srgb, var(--background-color), 50% black);
+                --card-text: color-mix(in srgb, var(--text-color), 100% white);
+            }
+        }
+        
+        .btn {
+            --btn-background-color: var(--secondary-color);
+            --btn-text: var(--white);
+
+            background: var(--btn-background-color);
+            color: var(--btn-text);
+            padding: var(--spacing-xs);
+            margin-top: var(--spacing-s);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background 0.2s;
+
+            &:hover {
+                background: color-mix(in srgb, var(--btn-background-color) 80%, black);
+            }
+        }
+
+        footer {
+            padding: 0 var(--spacing-l) var(--spacing-m) var(--spacing-s);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <h2 class="nav-logo">Design System</h2>
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Custom Properties & Math Functions</h1>
+                <p class="hero-text">
+                    A responsive, themeable design system built entirely with modern CSS. 
+                    This page demonstrates the power of custom properties and math functions 
+                    for creating flexible, maintainable interfaces.
+                </p>
+                <div class="button-group">
+                    <button class="btn">Get Started</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Fluid Typography</h3>
+                        <p>
+                            Text scales smoothly across all viewport sizes using clamp() 
+                            for responsive sizing without media queries.
+                        </p>
+                    </article>
+                    
+                    <article class="card card-featured">
+                        <h3>Custom Properties</h3>
+                        <p>
+                            A complete design system built with CSS variables that cascade 
+                            through the DOM and enable dynamic theming.
+                        </p>
+                    </article>
+                    
+                    <article class="card">
+                        <h3>Component Variations</h3>
+                        <p>
+                            Scoped custom properties create variations without duplicating 
+                            CSS, keeping code maintainable and DRY.
+                        </p>
+                    </article>
+                    
+                    <article class="card card-muted">
+                        <h3>Theme Support</h3>
+                        <p>
+                            Light and dark themes that automatically update all components 
+                            by redefining root-level custom properties.
+                        </p>
+                    </article>
+                    
+                    <article class="card">
+                        <h3>Responsive Spacing</h3>
+                        <p>
+                            Fluid spacing scales with viewport size, maintaining visual 
+                            hierarchy and breathing room on all devices.
+                        </p>
+                    </article>
+                    
+                    <article class="card">
+                        <h3>Math Functions</h3>
+                        <p>
+                            Calc and clamp functions enable dynamic calculations and 
+                            fluid sizing for truly responsive layouts.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Build?</h2>
+                <p>
+                    Start creating your own design systems with custom properties 
+                    and modern CSS math functions.
+                </p>
+                <button class="btn">Start Building</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Design System Practice. Built with modern CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>
