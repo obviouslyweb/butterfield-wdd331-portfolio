@@ -1,6 +1,6 @@
 /* Root declaration */
 :root {
-    /* Font size variations */
+    /* Font scale variations */
     --font-xs: calc(var(--font-m) * 0.65);
     --font-s: calc(var(--font-m) * 0.85);
     --font-m: clamp(1rem, 3vw, 1.2rem);
