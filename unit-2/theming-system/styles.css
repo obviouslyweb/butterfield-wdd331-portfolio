@@ -72,6 +72,22 @@
     --color-header: color-mix(in oklch, var(--color-primary) 30%, black);
 }
 
+@media (prefers-color-scheme: dark) {
+    /* Should this be the default, use it instead and hide theme button */
+    :root {
+        --color-primary: #ea7bd0;
+        --color-secondary: color-mix(in oklch, var(--color-primary) 80%, black);
+        --color-background: #1D1E2C;
+        --color-text: #FFFFFF;
+        --color-header: color-mix(in oklch, var(--color-primary) 30%, black);
+    }
+
+    .theme-toggle {
+        display: none;
+    }
+}
+
+
 /* ---------------
 COMPOSITION STYLES
 ---------------- */
