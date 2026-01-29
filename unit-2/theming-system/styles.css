@@ -30,13 +30,18 @@
 
 /* Your CSS implementation goes here */
 
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
 /* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--type-body);
 }
 
+/* Root declaration */
 :root {
     /* COLOR DECLARATIONS */
     /* Theme colors */
@@ -53,10 +58,15 @@
     --font-s: calc(var(--font-m) * 0.85);
     --font-m: clamp(1rem, 3vw, 1.2rem);
     --font-l: calc(var(--font-m) * 1.35);
-    --font-xl: calc(var(--font-m) * 1.75);
+    --font-xl: calc(var(--font-m) * 2);
+
+    /* Font style selections */
+    --type-title: "Zalando Sans Expanded", 'Rubik', sans-serif;
+    --type-body: "Rubik", sans-serif;
 
     /* Line height rhythm & variations */
     --rhythm: 1.4rem;
+    --space-xxs: calc(var(--rhythm) * 0.25);
     --space-xs: calc(var(--rhythm) * 0.5);
     --space-s: calc(var(--rhythm) * 0.75);
     --space-m: var(--rhythm);
@@ -81,8 +91,8 @@ COMPOSITION STYLES
     padding: var(--space-m);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-    gap: var(--space-l); /* horizontal + vertical gap between cards */
-    justify-content: center; /* optional: centers the grid in wider screens */
+    gap: var(--space-l);
+    justify-content: center;
 }
 
 .header-content {
@@ -100,7 +110,8 @@ COMPOSITION STYLES
 
     .hero-title {
         font-size: var(--font-xl);
-        margin-bottom: var(--space-xs)
+        margin-bottom: var(--space-xs);
+        font-family: var(--type-title);
     }
 }
 
@@ -110,41 +121,54 @@ COMPOSITION STYLES
 }
 
 .filter-buttons {
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
     display: flex;
     justify-content: center;
     gap: var(--space-s);
 }
 
 .product-card {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
     color: var(--color-text);
     font-size: var(--font-m);
+
+    img {
+        border-radius: var(--space-m);
+    }
 
     .product-content {
         
         h3 {
-            font-size: var(--font-xl);
+            font-size: var(--font-l);
+            font-family: var(--type-title);
         }
 
-        .product-price {
-            font-size:var(--font-m);
-        }
+        .product-footer {
 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: var(--space-xxs);
+            gap: var(--space-xxs);
+
+            .product-price {
+                font-size:var(--font-l);
+            }
+
+            .product-button {
+                padding: var(--space-xxs);
+                border-radius: 0.5rem;
+                border: 1px solid var(--color-primary);
+                background-color: transparent;
+                color: var(--color-text);
+                font-size: var(--font-s);
+            }
+        }
     }
 }
-
-/* <article class="product-card" data-category="tech">
-                    <img src="https://picsum.photos/seed/tech1/400/300" alt="Technology product" class="product-image">
-                    <div class="product-content">
-                        <h3 class="product-title">Wireless Headphones</h3>
-                        <p class="product-description">Premium sound quality with active noise cancellation.</p>
-                        <div class="product-footer">
-                            <span class="product-price">$299.99</span>
-                            <button class="product-button">View Details</button>
-                        </div>
-                    </div>
-                </article> */
 
 /* ---------------
 BLOCK STYLES
@@ -193,25 +217,16 @@ UTILITY STYLES
 EXCEPTION STYLES
 ---------------- */
 
-.theme-toggle:focus-visible {
+button:focus-visible {
     outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
 }
 
-.theme-toggle:hover {
-    background-color: color-mix(in oklch, currentColor 15%, transparent);    
-}
-
-.filter-button:focus-visible {
+button:active {
     outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
 }
 
-.filter-button:active {
-    outline: 3px solid var(--color-secondary);
-    outline-offset: 2px;
-}
-
-.filter-button:hover {
+button:hover {
     background-color: color-mix(in oklch, currentColor 15%, transparent);    
 }
