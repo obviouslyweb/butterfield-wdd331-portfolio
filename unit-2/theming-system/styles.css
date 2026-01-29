@@ -1,23 +1,12 @@
 /**
  * Product Showcase - Theming System
  * 
- * ARCHITECTURE CHOICE:
- * Choose either CUBE CSS or BEM for organizing your CSS.
- * Document your choice and follow it consistently throughout.
- * 
- * CUBE CSS approach:
+ * I went with the CUBE CSS approach, which uses the following:
  * - Composition: Layout patterns (.flow, .grid, .cluster)
  * - Utilities: Single-purpose classes (.text-center, .font-bold)
  * - Blocks: Component styles (.card, .button)
  * - Exceptions: State variations (add additional classes as needed)
  *
- * MODERN CSS FEATURES TO USE:
- * - CSS nesting throughout
- * - Custom properties for theming
- * - color-mix() for color variations
- * - Modern selectors (:is, :where, :has, :not)
- * - Logical properties (margin-inline, padding-block)
- * 
  * REQUIREMENTS:
  * 1. Define theme system with custom properties
  * 2. Implement light and dark themes
@@ -200,6 +189,12 @@ main {
     background-color: transparent;
     color: var(--color-text);
     font-size: var(--font-s);
+}
+
+.site-footer {
+    background-color: var(--color-header);
+    color: var(--color-primary);
+    padding: clamp(var(--space-s), var(--space-m), var(--space-l));
 }
 
 /* ---------------
