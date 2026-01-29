@@ -89,6 +89,24 @@ COMPOSITION STYLES
     gap: var(--space-m);
 }
 
+.hero {
+    padding: clamp(var(--space-xl), calc(var(--space-xl) * 1.2), calc(var(--space-xl) * 1.5));
+    text-align: center;
+    color: white;
+    background: linear-gradient(50deg, var(--color-primary), var(--color-secondary));
+
+    .hero-title {
+        font-size: var(--font-xl);
+        margin-bottom: var(--space-xs)
+    }
+}
+
+/* <section class="hero">
+            <h2 class="hero-title">Discover Amazing Products</h2>
+            <p class="hero-description">
+                Explore our curated collection of high-quality products. Filter by category to find exactly what you need.
+            </p>
+        </section> */
 
 /* ---------------
 UTILITY STYLES
@@ -117,6 +135,7 @@ BLOCK STYLES
     border: 3px solid var(--color-primary);
     background-color: transparent;
     color: var(--color-text);
+    font-size: var(--font-s);
 }
 
 main {
@@ -127,6 +146,11 @@ main {
 EXCEPTION STYLES
 ---------------- */
 
-.filter-button.active {
-    
+.theme-toggle:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.theme-toggle:hover {
+    background-color: color-mix(in oklch, currentColor 15%, transparent);    
 }
