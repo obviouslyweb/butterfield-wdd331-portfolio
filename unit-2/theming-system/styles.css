@@ -46,14 +46,14 @@
     --color-secondary: color-mix(in oklch, var(--color-primary) 60%, white);
     --color-background: #FFFFFF;
     --color-text: #000000;
-    --color-header: white;
+    --color-header: color-mix(in oklch, var(--color-primary) 20%, white);
 
     /* Font scale variations */
     --font-xs: calc(var(--font-m) * 0.65);
     --font-s: calc(var(--font-m) * 0.85);
     --font-m: clamp(1rem, 3vw, 1.2rem);
-    --font-l: calc(var(--font-m) * 1.5);
-    --font-xl: calc(var(--font-m) * 2);
+    --font-l: calc(var(--font-m) * 1.35);
+    --font-xl: calc(var(--font-m) * 1.75);
 
     /* Line height rhythm & variations */
     --rhythm: 1.4rem;
@@ -78,10 +78,11 @@ COMPOSITION STYLES
 ---------------- */
 
 .product-grid {
+    padding: var(--space-m);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: var(--space-l);
-    align-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    gap: var(--space-l); /* horizontal + vertical gap between cards */
+    justify-content: center; /* optional: centers the grid in wider screens */
 }
 
 .header-content {
@@ -106,7 +107,6 @@ COMPOSITION STYLES
 .filters {
     text-align: center;
     padding-top: var(--space-s);
-    padding-bottom: var(--space-s);
 }
 
 .filter-buttons {
@@ -114,6 +114,37 @@ COMPOSITION STYLES
     justify-content: center;
     gap: var(--space-s);
 }
+
+.product-card {
+    display: grid;
+    justify-content: center;
+    color: var(--color-text);
+    font-size: var(--font-m);
+
+    .product-content {
+        
+        h3 {
+            font-size: var(--font-xl);
+        }
+
+        .product-price {
+            font-size:var(--font-m);
+        }
+
+    }
+}
+
+/* <article class="product-card" data-category="tech">
+                    <img src="https://picsum.photos/seed/tech1/400/300" alt="Technology product" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Wireless Headphones</h3>
+                        <p class="product-description">Premium sound quality with active noise cancellation.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$299.99</span>
+                            <button class="product-button">View Details</button>
+                        </div>
+                    </div>
+                </article> */
 
 /* ---------------
 BLOCK STYLES
