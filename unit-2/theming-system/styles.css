@@ -46,6 +46,7 @@
     --color-secondary: color-mix(in oklch, var(--color-primary) 60%, white);
     --color-background: #FFFFFF;
     --color-text: #000000;
+    --color-header: white;
 
     /* Font scale variations */
     --font-xs: calc(var(--font-m) * 0.65);
@@ -69,6 +70,7 @@
     --color-secondary: color-mix(in oklch, var(--color-primary) 80%, black);   
     --color-background: #1D1E2C;
     --color-text: #FFFFFF;
+    --color-header: color-mix(in oklch, var(--color-primary) 30%, black);
 }
 
 /* ---------------
@@ -101,22 +103,16 @@ COMPOSITION STYLES
     }
 }
 
-/* <section class="hero">
-            <h2 class="hero-title">Discover Amazing Products</h2>
-            <p class="hero-description">
-                Explore our curated collection of high-quality products. Filter by category to find exactly what you need.
-            </p>
-        </section> */
+.filters {
+    text-align: center;
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-s);
+}
 
-/* ---------------
-UTILITY STYLES
----------------- */
-
-.visually-hidden {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-s);
 }
 
 /* ---------------
@@ -124,7 +120,7 @@ BLOCK STYLES
 ---------------- */
 
 .site-header {
-    background-color: color-mix(in oklch, var(--color-background) 70%, black);
+    background-color: var(--color-header);
     color: var(--color-primary);
     padding: clamp(var(--space-s), var(--space-m), var(--space-l));
 }
@@ -142,6 +138,26 @@ main {
     background-color: var(--color-background);
 }
 
+.filter-button {
+    padding: var(--space-xs) var(--space-xs);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: var(--font-s);
+}
+
+/* ---------------
+UTILITY STYLES
+---------------- */
+
+.visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+}
+
 /* ---------------
 EXCEPTION STYLES
 ---------------- */
@@ -152,5 +168,19 @@ EXCEPTION STYLES
 }
 
 .theme-toggle:hover {
+    background-color: color-mix(in oklch, currentColor 15%, transparent);    
+}
+
+.filter-button:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.filter-button:active {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.filter-button:hover {
     background-color: color-mix(in oklch, currentColor 15%, transparent);    
 }
