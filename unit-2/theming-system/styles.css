@@ -10,19 +10,7 @@
  * - Utilities: Single-purpose classes (.text-center, .font-bold)
  * - Blocks: Component styles (.card, .button)
  * - Exceptions: State variations (add additional classes as needed)
- * 
- * BEM approach:
- * - Blocks: Standalone components (.card)
- * - Elements: Parts of blocks (.card__title, .card__image)
- * - Modifiers: Variations (.card--featured)
- * 
- * ORGANIZATION:
- * You may create additional CSS files if you prefer to separate:
- * - Base styles and custom properties
- * - Layout patterns
- * - Components
- * - Utilities
- * 
+ *
  * MODERN CSS FEATURES TO USE:
  * - CSS nesting throughout
  * - Custom properties for theming
@@ -42,6 +30,13 @@
 
 /* Your CSS implementation goes here */
 
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     /* COLOR DECLARATIONS */
     /* Theme colors */
@@ -51,32 +46,83 @@
     /* Light theme */
     --color-secondary: color-mix(in oklch, var(--color-primary) 60%, white);
     --color-background: #FFFFFF;
+    --color-text: #000000;
+
+    /* Font scale variations */
+    --font-xs: calc(var(--font-m) * 0.65);
+    --font-s: calc(var(--font-m) * 0.85);
+    --font-m: clamp(1rem, 3vw, 1.2rem);
+    --font-l: calc(var(--font-m) * 1.5);
+    --font-xl: calc(var(--font-m) * 2);
+
+    /* Line height rhythm & variations */
+    --rhythm: 1.4rem;
+    --space-xs: calc(var(--rhythm) * 0.5);
+    --space-s: calc(var(--rhythm) * 0.75);
+    --space-m: var(--rhythm);
+    --space-l: calc(var(--rhythm) * 1.5);
+    --space-xl: calc(var(--rhythm) * 2);
 }
 
 .dark-theme {
     /* DARK THEME DECLARATION */ 
     --color-secondary: color-mix(in oklch, var(--color-primary) 80%, black);   
     --color-background: #1D1E2C;
+    --color-text: #FFFFFF;
 }
 
 /* ---------------
 COMPOSITION STYLES
 ---------------- */
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-l);
+    align-content: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+}
 
 
 /* ---------------
 UTILITY STYLES
 ---------------- */
 
-
+.visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+}
 
 /* ---------------
 BLOCK STYLES
 ---------------- */
 
+.site-header {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    padding: clamp(var(--space-s), var(--space-m), var(--space-l));
+}
 
+.theme-toggle { /* Theme toggle button */
+    padding: var(--space-xs) var(--space-xs);
+    border-radius: 0.5rem;
+    border: 3px solid var(--color-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
 
 /* ---------------
 EXCEPTION STYLES
 ---------------- */
+
+.filter-button.active {
+
+}
