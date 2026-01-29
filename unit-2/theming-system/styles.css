@@ -41,3 +41,42 @@
  */
 
 /* Your CSS implementation goes here */
+
+:root {
+    /* COLOR DECLARATIONS */
+    /* Theme colors */
+    --color-primary: #9C528B;
+    --color-light-gray: #59656F;
+
+    /* Light theme */
+    --color-secondary: color-mix(in oklch, var(--color-primary) 60%, white);
+    --color-background: #FFFFFF;
+}
+
+.dark-theme {
+    /* DARK THEME DECLARATION */ 
+    --color-secondary: color-mix(in oklch, var(--color-primary) 80%, black);   
+    --color-background: #1D1E2C;
+}
+
+/* ---------------
+COMPOSITION STYLES
+---------------- */
+
+
+
+/* ---------------
+UTILITY STYLES
+---------------- */
+
+
+
+/* ---------------
+BLOCK STYLES
+---------------- */
+
+
+
+/* ---------------
+EXCEPTION STYLES
+---------------- */
