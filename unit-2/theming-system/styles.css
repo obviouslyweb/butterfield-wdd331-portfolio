@@ -40,8 +40,7 @@
 :root {
     /* COLOR DECLARATIONS */
     /* Theme colors */
-    --color-primary: #9C528B;
-    --color-light-gray: #59656F;
+    --color-primary: #a52e89;
 
     /* Light theme */
     --color-secondary: color-mix(in oklch, var(--color-primary) 60%, white);
@@ -66,6 +65,7 @@
 
 .dark-theme {
     /* DARK THEME DECLARATION */ 
+    --color-primary: #ea7bd0;
     --color-secondary: color-mix(in oklch, var(--color-primary) 80%, black);   
     --color-background: #1D1E2C;
     --color-text: #FFFFFF;
@@ -106,7 +106,7 @@ BLOCK STYLES
 ---------------- */
 
 .site-header {
-    background-color: var(--color-background);
+    background-color: color-mix(in oklch, var(--color-background) 70%, black);
     color: var(--color-primary);
     padding: clamp(var(--space-s), var(--space-m), var(--space-l));
 }
@@ -115,8 +115,12 @@ BLOCK STYLES
     padding: var(--space-xs) var(--space-xs);
     border-radius: 0.5rem;
     border: 3px solid var(--color-primary);
-    background-color: var(--color-background);
+    background-color: transparent;
     color: var(--color-text);
+}
+
+main {
+    background-color: var(--color-background);
 }
 
 /* ---------------
@@ -124,5 +128,5 @@ EXCEPTION STYLES
 ---------------- */
 
 .filter-button.active {
-
+    
 }
