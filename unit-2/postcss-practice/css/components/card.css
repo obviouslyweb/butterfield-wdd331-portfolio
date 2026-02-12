@@ -1,0 +1,79 @@
+/**
+ * Card Component
+ * A responsive card that adapts to its container size using container queries.
+ * Uses @supports for progressive enhancement with fallbacks.
+ */
+
+.card-container {
+    .card {
+        background-color: var(--bg-clr);
+        border: 1px solid var(--table-border-clr);
+        border-radius: var(--radius-med);
+        padding: var(--spacing-med);
+
+        gap: var(--spacing-sm);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: var(--spacing-sm);
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: var(--font-size-med);
+            font-weight: 700;
+            color: var(--text-clr);
+        }
+
+        .card-description {
+            font-size: var(--font-size-med);
+            color: var(--text-clr);
+            line-height: var(--line-height-med);
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-med);
+}
+
+@supports (grid-template-rows: subgrid) {
+    .card {
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+    }
+}
+
+@supports (container-type: inline-size) {
+    .card-container {
+        container-type: inline-size;
+        container-name: card;
+    }
+
+    @container card (min-width: 400px) {
+        .card {
+            flex-direction: row;
+            align-items: flex-start;
+
+            .card-image {
+                width: 200px;
+                flex-shrink: 0;
+            }
+        }
+
+        @supports (selector(&)) {
+            .card {
+                &:hover {
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
