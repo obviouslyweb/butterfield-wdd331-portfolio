@@ -1,12 +1,5 @@
 /**
  * Article Layout
- * TODO: Implement a magazine-style article layout with hero, content area, sidebar, and author bio
- * 
- * Requirements:
- * - Hero section should use Flexbox for vertical centering
- * - Main content and sidebar should be side-by-side with proportional sizing
- * - Pull quotes should use align-self for positioning
- * - Author bio should use media object pattern
  */
 
 .article-container {
@@ -14,12 +7,12 @@
     margin: 0 auto;
 }
 
-/* TODO: Style the hero section
- * Hint: Use Flexbox with flex-direction: column
- * Center content vertically and push author info to bottom with margin-top: auto
- */
 .article-hero {
-    /* Your code here */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
     min-height: 400px;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     color: white;
@@ -39,24 +32,22 @@
 }
 
 .article-hero-meta {
-    /* Your code here - how do you push this to the bottom? */
+    margin-top: auto;
     font-size: var(--font-size-small);
     opacity: 0.8;
 }
 
-/* TODO: Style the main content area (article + sidebar)
- * Hint: Use Flexbox with flex-wrap: wrap
- * Article content should have flex: 2 1 500px
- * Sidebar should have flex: 1 1 300px
- * This creates proportional sizing that wraps on narrow screens
- */
 .article-body {
-    /* Your code here */
+    display: flex;
+    flex-direction: row;
     padding: 0 var(--spacing-xl);
 }
 
 .article-content {
-    /* Your code here */
+    display: flex;
+    flex: 2 1 500px;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding-right: var(--spacing-xl);
 }
 
@@ -66,13 +57,9 @@
     margin-bottom: var(--spacing-lg);
 }
 
-/* TODO: Style pull quotes
- * Hint: Pull quotes break the flow of text
- * Consider using align-self or margin to create visual interest
- * They should stand out from regular text
- */
 .pull-quote {
-    /* Your code here */
+    align-self: center;
+    flex-wrap: wrap;
     font-size: var(--font-size-large);
     font-style: italic;
     font-weight: var(--font-weight-medium);
@@ -83,14 +70,14 @@
     background-color: var(--color-surface);
 }
 
-/* TODO: Style the sidebar
- * Hint: Fixed-ish width that shrinks proportionally to article content
- */
 .article-sidebar {
-    /* Your code here */
+    flex: 1 1 300px;
 }
 
 .sidebar-section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50vh;
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg);
     background-color: var(--color-surface);
@@ -104,12 +91,10 @@
     border-bottom: 2px solid var(--color-border);
 }
 
-/* TODO: Style related articles in sidebar
- * Hint: Each related article should use media object pattern
- * Small thumbnail on left, text on right
- */
 .related-article {
-    /* Your code here */
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--color-border);
 }
@@ -119,7 +104,6 @@
 }
 
 .related-article-thumbnail {
-    /* Your code here - fixed width */
     width: 80px;
     height: 60px;
     border-radius: var(--radius-sm);
@@ -128,7 +112,8 @@
 }
 
 .related-article-content {
-    /* Your code here - grows to fill space */
+    flex-basis: 50%;
+    flex-grow: 1;
 }
 
 .related-article-title {
@@ -143,12 +128,10 @@
     color: var(--color-text-muted);
 }
 
-/* TODO: Style the author bio section with media object pattern
- * Hint: Author photo on left, bio text on right
- * This is similar to the review pattern from product page
- */
 .article-author {
-    /* Your code here */
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-med);
     margin-top: var(--spacing-xxl);
     padding: var(--spacing-xl);
     background-color: var(--color-surface);
@@ -156,7 +139,6 @@
 }
 
 .author-photo {
-    /* Your code here */
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -165,7 +147,7 @@
 }
 
 .author-info {
-    /* Your code here */
+    /* Didn't really need anything with my implementation here */
 }
 
 .author-name {
