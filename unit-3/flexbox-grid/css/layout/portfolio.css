@@ -1,35 +1,7 @@
 /**
  * Portfolio Layout
  * 
- * TODO: Implement the following layout requirements:
- * 
- * 3. NAVIGATION (Flexbox)
- *    - Use flexbox for nav links
- *    - Space items appropriately
- *    - Align items vertically
- * 
- * 4. HERO SECTION (Grid)
- *    - Use grid for hero content positioning
- *    - Center content vertically and horizontally
- * 
- * 5. STATS GRID (Auto-Fit)
- *    - Use repeat(auto-fit, minmax(..., 1fr))
- *    - Make cards responsive without media queries
- *    - Ensure minimum width works on mobile
- * 
- * 6. PHOTO GALLERY (Auto-Fill vs Auto-Fit)
- *    - Experiment with both auto-fill and auto-fit
- *    - Decide which works better for this layout
- *    - Use minmax() for responsive columns
- * 
- * 7. ABOUT SECTION (Grid + Flexbox)
- *    - Grid for image/text layout
- *    - Flexbox for internal content arrangement
- * 
- * 8. FOOTER (Flexbox)
- *    - Use flexbox for footer content
- *    - Distribute space between elements
- */
+*/
 
 /* ===========================================
    STICKY FOOTER SETUP
@@ -113,7 +85,8 @@ body {
     padding: var(--spacing-xxxl) var(--spacing-lg);
     min-height: 500px;
     
-    /* TODO: Use grid to center content */
+    display: grid;
+    place-items: center;
 }
 
 .hero-content {
@@ -148,9 +121,9 @@ body {
 }
 
 .stats-grid {
-    /* TODO: Use auto-fit with minmax */
-    /* Make cards responsive - 3 columns on desktop, fewer on smaller screens */
-    /* Hint: minmax(min(250px, 100%), 1fr) prevents overflow on mobile */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: var(--spacing-med);
 }
 
 
@@ -173,10 +146,10 @@ body {
 }
 
 .photo-grid {
-    /* TODO: Implement responsive photo grid */
-    /* Experiment: Try auto-fill first, then auto-fit */
-    /* Which one looks better for a photo gallery? */
-    /* Consider: Do you want photos to expand or stay consistent width? */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+    gap: var(--spacing-med);
+    /* Decided on auto-fill since card sizes should be consistent over photo boundary accuracy */
 }
 
 
@@ -192,13 +165,14 @@ body {
     max-width: var(--content-max-width);
     margin: 0 auto;
     
-    /* TODO: Use grid for image and text layout */
-    /* Desktop: image on left, text on right */
-    /* Mobile: stack vertically */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image desc";
+    gap: var(--spacing-xl);
 }
 
 .about-image {
-    /* TODO: Assign to grid area or position */
+    grid-area: image;
 }
 
 .about-image img {
@@ -209,8 +183,11 @@ body {
 }
 
 .about-content {
-    /* TODO: Assign to grid area or position */
-    /* Use flexbox internally for vertical spacing */
+    grid-area: desc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-med);
 }
 
 
@@ -222,7 +199,6 @@ body {
     color: white;
     padding: var(--spacing-xl) var(--spacing-lg);
     flex-shrink: 0;
-    /* TODO: Don't let footer grow (sticky footer requirement) */
 }
 
 .footer-container {
@@ -231,9 +207,8 @@ body {
     
     display: flex;
     flex-direction: row;
-
-    /* TODO: Use flexbox for footer layout */
-    /* Space between copyright and social links */
+    justify-content: space-between;
+    gap: var(--spacing-med);
 }
 
 .footer-copyright {
@@ -241,7 +216,7 @@ body {
 }
 
 .footer-social {
-    /* TODO: Use flexbox for social links */
+    display: flex;
 }
 
 .footer-social a {
@@ -258,14 +233,8 @@ body {
 /* ===========================================
    RESPONSIVE DESIGN
    =========================================== */
-/* 
-   TODO: Add media queries where needed
-   The auto-fit/auto-fill grids handle most responsive behavior,
-   but you may need breakpoints for:
-   - About section (stack image/text on mobile)
-*/
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .header-container {
         grid-template-columns: 1fr;
@@ -281,5 +250,12 @@ body {
     .site-nav {
         justify-content: flex-start;
         margin: 0 auto;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "image"
+            "desc";
     }
 }
