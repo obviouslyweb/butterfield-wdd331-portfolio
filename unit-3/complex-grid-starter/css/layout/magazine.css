@@ -58,8 +58,15 @@ body {
 .feature-section {
     display: grid;
     grid-area: feature;
-    grid-template-rows: [top] 300px [middle] auto [bottom];
-    grid-template-columns: [full-start] 1fr [content-start] 2fr [content-end] 1fr [full-end];
+    grid-template-rows:
+        [top] 300px
+        [middle] auto
+        [bottom];
+    grid-template-columns:
+        [full-start] 1fr
+        [content-start] 2fr
+        [content-end] 1fr
+        [full-end];
 }
 
 .feature-image {
