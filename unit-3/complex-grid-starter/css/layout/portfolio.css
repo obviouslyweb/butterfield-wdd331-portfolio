@@ -57,7 +57,8 @@ body {
 .portfolio-card {
    display: grid;
    grid-row: span 4;
-   grid-template-rows: subgrid;
+   grid-template-rows: auto auto 1fr auto;
+   /* Subgrid defintion is under the supports below */
    gap: var(--spacing-sm);
 
     background: var(--color-surface);
@@ -115,7 +116,7 @@ body {
 
 @supports (grid-template-rows: subgrid) {
    .portfolio-card {
-      grid-template-rows: auto auto 1fr auto;
+      grid-template-rows: subgrid;
    }
 }
 
