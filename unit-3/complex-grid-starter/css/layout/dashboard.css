@@ -1,14 +1,5 @@
 /**
  * Dashboard Layout
- * 
- * TODO: Implement a dashboard using:
- * 1. Auto-Fit - Make cards responsive without media queries
- * 2. Strategic Grid Usage - Decide where Grid is appropriate
- * 
- * Key Requirements:
- * - Use repeat(auto-fit, minmax(...)) for responsive card grids
- * - Ensure cards work on all screen sizes (mobile-friendly minmax)
- * - Consider: Does this layout need subgrid? Why or why not?
  */
 
 /* ===========================================
