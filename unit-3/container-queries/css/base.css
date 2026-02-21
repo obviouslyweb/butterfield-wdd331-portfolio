@@ -56,7 +56,7 @@ body {
 
 /* Widget container base styles */
 .widget-container {
-    /* TODO: Add container-type here to enable container queries */
+    container-type: inline-size;
     border-radius: 12px;
     background: #1e293b;
     padding: 1.5rem;
@@ -86,18 +86,49 @@ body {
    Use @media queries to control grid spans at different viewport sizes
    ============================================ */
 
-/* TODO: Add @media query for tablet (max-width: 1200px)
-   Hint: Make narrow widgets span 6 columns
-   Hint: Make medium and wide widgets span 6 columns
-*/
+@media (max-width: 1200px) {
+    :is(.widget-container.col-narrow, .widget-container.col-medium, .widget-container.col-wide) {
+        grid-column: span 6;
+    }
+}
 
-/* TODO: Add @media query for mobile (max-width: 768px)
-   Hint: Reduce body padding to 0.75rem
-   Hint: Reduce dashboard-grid gap to 0.75rem
-   Hint: Reduce widget-container padding to 0.75rem
-   Hint: Make all widgets span 12 columns (full width)
-   Hint: Reduce padding on product-item, activity-item, metric-card to 0.5rem
-   Hint: Reduce gaps in product-list, user-activity-list, metrics-grid to 0.5rem
-   Hint: Reduce gaps in product-item, activity-item, activity-item-row to 0.5rem
-   Hint: Reduce gaps in revenue-chart, top-products, user-activity, performance-metrics to 0.5rem
-*/
+@media (max-width: 768px) {
+
+    body {
+        padding: 0.75rem;
+    }
+
+    .widget-container {
+        grid-column: span 12;
+        padding: 0.75rem;
+    }
+
+    .dashboard-grid {
+        gap: 0.75rem;
+    }
+
+    .product-item,
+    .activity-item,
+    .metric-card {
+        padding: 0.5rem;
+    }
+
+    .product-list,
+    .user-activity-list,
+    .metrics-grid {
+        gap: 0.5rem;
+    }
+
+    .product-item,
+    .activity-item,
+    .activity-item-row {
+        gap: 0.5rem;
+    }
+
+    .revenue-chart,
+    .top-products,
+    .user-activity,
+    .performance-metrics {
+        gap: 0.5rem;
+    }
+}

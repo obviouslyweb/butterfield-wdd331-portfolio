@@ -25,17 +25,13 @@
     }
 
     .stat-card-icon {
-        /* TODO: Use clamp() with cqi units for fluid sizing */
-        /* Hint: clamp(36px, 8cqi, 48px) scales icon with container width */
-        width: 40px;
-        height: 40px;
+        width: clamp(36px, 8cqi, 48px);
+        height: clamp(36px, 8cqi, 48px);
         border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        /* TODO: Use clamp() with cqi units for fluid font size */
-        /* Hint: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem) */
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem);
         flex-shrink: 0;
 
         &.blue {
@@ -72,17 +68,13 @@
     }
 
     .stat-card-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.5rem, 4cqi + 1rem, 2.5rem) scales value with container */
-        font-size: 1.75rem;
+        font-size: clamp(1.5rem, 4cqi + 1rem, 2.5rem);
         font-weight: 700;
         color: #f1f5f9;
     }
 
     .stat-card-change {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
-        font-size: 0.875rem;
+        font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -104,21 +96,40 @@
     }
 }
 
-/* TODO: Add @container query for stat card at 200px+
-   Hint: Make icon and title display side by side (flex-direction: row)
-   Hint: Reset text-align to left
-*/
+@container (min-width: 200px) {
+    .widget-container {
+        .stat-card {
+            .stat-card-header {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+    }
+}
 
-/* TODO: Add @container query for stat card at 250px+
-   Hint: Make entire card horizontal (flex-direction: row)
-   Hint: Use justify-content: space-between to space elements
-   Hint: Make stat-card-content flex: 1
-*/
+@container (min-width: 250px) {
+    .stat-card {
+        flex-direction: row;
+        justify-content: space-between;
 
-/* TODO: Add @container query for stat card at 350px+
-   Hint: Display the mini chart (display: block)
-   Hint: Set width to 80px and flex-shrink: 0
-*/
+        .stat-card-content {
+            flex: 1;
+            text-align: right;
+        }
+
+        .stat-card-change {
+            justify-content: flex-end;
+        }
+    }
+}
+
+@container (min-width: 350px) {
+    .stat-card .stat-card-chart {
+        display: block;
+        width: 80px;
+        flex-shrink: 0;
+    }
+}
 
 /* ============================================
    REVENUE CHART WIDGET
@@ -162,25 +173,21 @@
     }
 
     .revenue-stat-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 3cqi + 0.75rem, 2rem);
         font-weight: 700;
         color: #f1f5f9;
     }
 
     .revenue-chart-visual {
         width: 100%;
-        /* TODO: Use clamp() with cqi units for fluid height */
-        /* Hint: clamp(180px, 30cqi, 300px) scales chart height with container */
+        font-size: clamp(180px, 30cqi, 300px);
         height: 200px;
         background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
         border-radius: 8px;
         display: flex;
         align-items: flex-end;
         padding: 1rem;
-        /* TODO: Use clamp() with cqi units for fluid gap between bars */
-        /* Hint: clamp(0.25rem, 1cqi, 0.75rem) */
+        gap: clamp(0.25rem, 1cqi, 0.75rem);
         gap: 0.5rem;
     }
 
@@ -192,12 +199,21 @@
     }
 }
 
-/* TODO: Add @container query for revenue chart at 450px+
-   Hint: Make header horizontal (flex-direction: row)
-   Hint: Use justify-content: space-between
-   Hint: Make stats horizontal (flex-direction: row)
-   Hint: Add gap: 2rem between stats
-*/
+@container (min-width: 450px) {
+    .revenue-chart {
+        .revenue-chart-header {
+            align-items: center;
+            justify-content: space-between;
+            text-align: flex-end;
+            flex-direction: row;
+        }
+
+        .revenue-chart-stats {
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+}
 
 /* ============================================
    TOP PRODUCTS WIDGET
@@ -253,16 +269,12 @@
     .product-name {
         font-weight: 600;
         color: #f1f5f9;
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
-        font-size: 0.875rem;
+        font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
     }
 
     .product-category {
         color: #64748b;
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem) */
-        font-size: 0.75rem;
+        font-size: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem);
     }
 
     .product-stat {
@@ -273,36 +285,51 @@
     }
 
     .product-stat-label {
-        /* TODO: Use clamp() with cqi units - should match product-name */
-        font-size: 0.75rem;
+        font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
         font-weight: 600;
         color: #f1f5f9;
     }
 
     .product-stat-value {
-        /* TODO: Use clamp() with cqi units - should match product-category */
-        font-size: 0.7rem;
+        font-size: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem);
         color: #64748b;
     }
 }
 
-/* TODO: Add @container query for product-item at 400px or less
-   Hint: Change grid to 2 columns: 60px 1fr
-   Hint: Use grid-template-rows: auto auto
-   Hint: Position product-info in column 2, row 1
-   Hint: Position first product-stat in column 1, row 2
-   Hint: Position second product-stat in column 2, row 2
-*/
+@container (max-width: 400px) {
+    .product-item {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;   
+    }
 
-/* TODO: Add @container query for product-list at 500px+
-   Hint: Change to grid layout with 2 columns
-   Hint: grid-template-columns: repeat(2, 1fr)
-*/
+    .product-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
 
-/* TODO: Add @container query for product-list at 800px+
-   Hint: Change to 3 columns
-   Hint: grid-template-columns: repeat(3, 1fr)
-*/
+    .product-stat:first-of-type {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .product-stat:last-of-type {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+@container (min-width: 500px) {
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container (min-width: 800px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 /* ============================================
    USER ACTIVITY WIDGET
@@ -410,13 +437,21 @@
     }
 }
 
-/* TODO: Add @container query for activity-item at 400px+
-   Hint: Make activity-item horizontal (flex-direction: row)
-   Hint: Use align-items: center
-   Hint: Use justify-content: space-between
-   Hint: Make activity-item-row flex: 1
-   Hint: Make activity-meta flex-shrink: 0
-*/
+@container (min-width: 400px) {
+    .user-activity .activity-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .activity-item-row {
+        flex: 1;
+    }
+
+    .activity-meta {
+        flex-shrink: 0;
+    }
+}
 
 /* ============================================
    PERFORMANCE METRICS WIDGET
@@ -451,16 +486,12 @@
     }
 
     .metric-label {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem) */
-        font-size: 0.875rem;
+        font-size: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem);
         color: #94a3b8;
     }
 
     .metric-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
-        font-size: 1.75rem;
+        font-size: clamp(1.25rem, 3cqi + 0.75rem, 2rem);
         font-weight: 700;
         color: #f1f5f9;
     }
@@ -480,22 +511,26 @@
     }
 }
 
-/* TODO: Add @container query for metrics-grid at 350px+
-   Hint: Change to 2 columns
-   Hint: grid-template-columns: repeat(2, 1fr)
-*/
+@container (min-width: 350px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-/* TODO: Add @container query for metrics-grid at 550px+
-   Hint: Change to 3 columns
-   Hint: grid-template-columns: repeat(3, 1fr)
-*/
+@container (min-width: 550px) {
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
 
-/* TODO: Add @container query for metrics-grid at 750px+
-   Hint: Change to 4 columns
-   Hint: grid-template-columns: repeat(4, 1fr)
-*/
+@container (min-width: 750px) {
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
 
-/* TODO: Add @container query for metrics-grid at 950px+
-   Hint: Change to 5 columns
-   Hint: grid-template-columns: repeat(5, 1fr)
-*/
+@container (min-width: 950px) {
+    .metrics-grid {
+        grid-template-columns: repeat(5, 1fr)
+    }
+}
