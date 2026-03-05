@@ -26,9 +26,28 @@ body {
             gap: 10px;
 
             flex-direction: row;
+
             .profile-content {
                 display: flex;
                 flex-direction: column;
+                gap: 10px;
+
+                .content-section {
+                    border: 1px solid white;
+                    padding: 10px;
+                    border-radius: 10px;
+                    gap: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    color: white;
+
+                    .quote {
+                        background-color:rgba(255, 255, 255, 0.503);
+                        padding: 10px;
+                        color: black;
+                        border-radius: 10px;
+                    }
+                }
             }
         }
     }
