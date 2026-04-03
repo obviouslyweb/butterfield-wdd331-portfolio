@@ -50,10 +50,13 @@ const home_imgs = [
 
 const image_container = document.querySelector('.fade-img');
 if (image_container) {
-    // Select random image to apply & load it in
+    const scriptEl = document.querySelector('script[src*="core.js"]');
+    const scriptSrc = scriptEl?.getAttribute('src') || 'js/core.js';
+    const resolvedScript = new URL(scriptSrc, window.location.href);
+    const siteRootHref = resolvedScript.href.replace(/\/js\/core\.js$/i, '');
     let rand = Math.floor(Math.random() * home_imgs.length);
     image_container.onload = () => image_container.classList.add('loaded');
-    image_container.src = "/images/bg/" + home_imgs[rand];
+    image_container.src = `${siteRootHref}/images/bg/${home_imgs[rand]}`;
 }
 
 // Marquee footer
