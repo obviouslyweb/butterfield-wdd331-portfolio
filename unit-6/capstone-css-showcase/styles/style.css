@@ -1,0 +1,13 @@
+@import url("partials/header.css");
+@import url("partials/footer.css");
+@import url("core.css");
+
+@font-face {
+  font-family: "Curse Casual";
+  src: url("fonts/Curse Casual.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}

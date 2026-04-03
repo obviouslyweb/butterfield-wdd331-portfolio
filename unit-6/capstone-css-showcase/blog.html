@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta elements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts - TheWebSite</title>
+    <!-- Style & JS imports -->
+    <link href="/styles/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/styles/effects.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/styles/partials/lightbox.css" rel="stylesheet" type="text/css" media="all"> <!-- PAGE SPECIFIC STYLE -->
+    <script src="/js/core.js" defer></script>
+   <!-- LINKS: 88x31 button, favicon -->
+    <link rel="icon" sizes="88x31" href="/images/buttons/tws-button.gif"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+
+    <!-- Lightbox for image viewing -->
+    <div class="lightbox" id="lightbox">
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-text">
+        <p id="lightbox-caption">test</p>
+        <p><strong>Currently in lightbox view</strong></p>
+        <p>Click/tap anywhere to close</p>
+      </div>
+    </div>
+
+    <header>
+      <a class="header-left" href="/home.html">
+        <img src="/images/web-pfp.png" alt="Web profile picture">
+        <h1 class="style-colon" aria-hidden="true">:</h1>
+        <h1>TheWeb<span class="header-accent">Site</span></h1>
+      </a>
+      <div class="header-right">
+        <button type="button" class="mobile-menu-button">
+          <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title id="svgTitle">Toggle Menu</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
+          </svg>
+        </button>
+        <p>Internet home for</p>
+        <img class="twc_logo" src="/images/twclogo.png" alt="TheWebCon">
+      </div>
+    </header>
+
+    <main>
+      <nav class="sidebar">
+        <details open>
+          <summary>Explore</summary>
+          <a href="/home.html">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/interests.html">Interests</a>
+          <a href="/blog.html">Thoughts</a>
+          <a href="/guestbook.html">Guestbook</a>
+        </details>
+
+        <details open>
+          <summary>Creations</summary>
+          <a href="/portfolio/music.html">Music</a>
+          <a href="/portfolio/designs.html">Designs</a>
+          <a href="/portfolio/mctp.html">Fuse & MCTP</a>
+          <a href="/portfolio/videos.html">Videos & TDRZ</a>
+        </details>
+
+        <details>
+          <summary>Socials</summary>
+          <a href="https://www.reddit.com/user/TheWebCon/">Reddit</a>
+          <a href="https://discord.gg/fNHHcxSA">Discord</a>
+          <a href="https://bsky.app/profile/thewebcon.bsky.social">Bluesky</a>
+          <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
+          <a href="https://x.com/thewebconmusic">Twitter</a>
+          <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
+          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+        </details>
+      </nav>
+
+      <section class="core">
+        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">read my inner dialogue like a book</em></h2>
+        <!-- FORMAT:
+         <div class="card (N/A, orange, blue, green, yellow, red, purple) (N/A, bg) (N/A, IF BG: blur)">
+          <p>text on one line<br>text on another line</p>
+          <img class="N/A, wide, allow-lightbox">
+          <p class="footnote">1:01am - 1/1/0001</p>
+        </div> -->
+
+        <!-- empty template:
+        <div class="card ">
+          <p> </p>
+          <img class="" src="/images/blog/">
+          <p class="footnote">TIME - DATE</p>
+        </div> 
+        -->
+
+        <!-- ONCE YOU GET TO LIKE 30 OR SO ENTRIES SPLIT IT OFF INTO AN ARCHIVE PAGE AND LINK IT TO THE END OF HERE -->
+
+        <!-- ADD ENTRIES BELOW -->
+        <div class="card purple">
+          <p>Finally completed something for a course I've been stressed all semester about, but I think I'm pretty much done with that entire class now. Graduation might actually be possible holy</p>
+          <p class="footnote">3:18pm - 3/14/2026</p>
+        </div>
+
+        <div class="card green">
+          <p>I got into Grace for the gameplay, but stayed for the MUSIC. holy crap this soundtrack slaps, and of all things, I can't get that gorgeous animal-crossing style lobby theme out of my head. It's so beautiful. How do I learn to compose like this</p>
+          <p class="footnote">1:12am - 3/11/2026</p>
+        </div>
+
+        <div class="card orange">
+          <p>i really need to finally sit down with stardew valley and get into it already but im afraid of how much time im going to lose when i do<p>
+          <p class="footnote">10:37pm - 3/8/2026</p>
+        </div>
+
+        <div class="card blue">
+          <p>finally beat pressure lockerless after a few attempts! I almost got all the way through damageless but then the first room in the ridge trapped me in a locker next to a pdg speaker while a froger went back and forth. thank you game, very cool</p>
+          <p class="footnote">4:10pm - 3/4/2026</p>
+        </div>
+
+        <div class="card purple">
+          <p>been oversleeping way too much. doc got a new med for me that may improve things in that regard, but we'll see!</p>
+          <img class="allow-lightbox" src="/images/portfolio/designs/illustration/ill-sleep.png" data-caption="decided to draw my OC for the first time in a while to... commemorate the occasion?">
+          <p class="footnote">3:52pm - 2/26/2026</p>
+        </div>
+
+        <div class="card orange">
+          <p>The new rift fishing demo came out today and I don't know if it's just me but I just can't get into it. I adore webfishing so much and I get why it's not being updated anymore, but rift just doesn't have the sauce I'm looking for. maybe that'll change once I get some more time in it, but it's hard for me to not compare it to this</p>
+          <img class="wide allow-lightbox" src="/images/blog/fishing.jpg" data-caption="like bro. the vibes in this image. I know it's with a mod but the aesthetic works so well">
+          <p class="footnote">12:44am - 2/26/2026</p>
+        </div>
+
+        <div class="card blue">
+          <p>got some good work done today, finished the music page. feelin good about progress<br>A part of me wants to carry over the card styling from the music & code pages to this but idk how it would look</p>
+          <p class="footnote">8:33pm - 2/24/2026</p>
+        </div>
+
+        <div class="card yellow">
+          <p>the backrooms trailer dropped today, made by the same guy who did the really awesome web series about it<br>After loving Iron Lung I am on board for more indie psychological horror</p>
+          <a href="https://youtu.be/tKGhxMi50y8">
+            <img src="https://media1.tenor.com/m/Cm7_XXEymXEAAAAd/backrooms-dancing.gif">
+          </a>
+          <p class="footnote">1:56pm - 2/24/2026</p>
+        </div>
+
+        <div class="card green">
+          <p>new strategy: computer off by midnight, no more all-nighters. If I want to actually pass my freaking classes I have to stop doing this. also the site now has mobile improvements and a cool fancy dynamic footer, woah</p>
+          <img src="https://media1.tenor.com/m/EbDfjG0fPO8AAAAC/smily-balls.gif" alt="Smiley balls bouncing up and down">
+          <p class="footnote">11:54pm - 2/23/2026</p>
+        </div>
+
+        <div class="card red">
+          <p>yeah I crashed. didn't take long. but, uh, I think I should be able to reset myself properly before tomorrow. here's hopin</p>
+          <p class="footnote">9:33pm - 2/23/2026</p>
+        </div> 
+
+        <div class="card purple">
+          <p>okay the js is done, that's gonna be where I leave things for now. might work on it more later today if I don't crash after work & school, but we'll see...</p>
+          <p class="footnote">9:21am - 2/23/2026</p>
+        </div>
+        
+        <div class="card blue">
+          <p>on the one hand, i lost a night of sleep in an effort to make this website.<br>on the other, i was awake when massive monster dropped the wip draft of the next COTL animation.<br>I think this was a net positive</p>
+          <a href="https://youtu.be/0gdgXBiZa8A?si=WHzkOwIsHIjzd8fX">
+            <img src="/images/blog/lambjump-opti.gif" alt="Work-in-progress animation of the lamb jumping and getting hit by a weapon">
+          </a>
+          <p class="footnote">8:21am - 2/23/2026</p>
+        </div>
+
+        <div class="card">
+          <p>saw someone make a scrolling tab of icons on their site annd now I REALLY want to rework my footer to do the same, that way I won't run out of space when I inevitably want to put more icon cards there</p>
+          <p class="footnote">7:18am - 2/23/2026</p>
+        </div> 
+
+        <div class="card green">
+          <p>Wait so do people actually find these sites on neocities? Are people able to read this right now just by browsing the website? I just took a look at the stats and somehow I have two followers in the past like 4 hours of work what the heck happened</p>
+          <p class="footnote">7:07am - 2/23/2026</p>
+        </div> 
+
+        <div class="card purple">
+          <p>listening to markiplier play help wanted 2 though has been very nice while i bang my head against this project</p>
+          <p class="footnote">6:28am - 2/23/2026</p>
+        </div>
+
+        <div class="card blue">
+          <p>I probably shouldn't have pulled another all-nighter working on this site but it's too fun<br>part of the problem is the fact that my courses haven't really let me just mess around like this honestly</p>
+          <p class="footnote">6:19am - 2/23/2026</p>
+        </div>
+
+        <!-- ADD ENTRIES ABOVE -->
+        <p class="footnote">End of thought log</p>
+      </section>
+
+      <img class="fade-img"src="#">
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <div class="footer-marquee">
+          <div class="footer-marquee-track">
+            <div class="footer-marquee-content">
+              <!-- Content in here will be duplicated for marquee effect as needed -->
+              <a class="footer-card" href="https://neocities.org/site/thewebcon"><img src="/images/buttons/neocities.png" alt="Site hosted by Neocities"></a>
+              <a class="footer-card" href="https://thewebcon.neocities.org/"><img src="/images/buttons/tws-button.gif" alt="TheWebSite Button"></a>
+              <a class="footer-card" href="https://www.firefox.com/"><img src="/images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <p><strong>Site is under construction!</strong> Please excuse any oddities...</p>
+              <!-- Content in here will be duplicated for marquee effect as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Site lovingly handcrafted by Web ♥</p>
+    </footer>
+
+  </body>
+</html>

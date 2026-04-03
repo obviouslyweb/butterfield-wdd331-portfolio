@@ -1,0 +1,47 @@
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+    cursor: pointer;
+    overflow-y: auto;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 90vw;
+        max-height: 90vh;
+        min-height: 0;
+        object-fit: contain;
+        border-radius: 10px;
+        flex-shrink: 1;
+    }
+
+    &.has-caption img {
+        max-height: 70vh;
+    }
+
+    .lightbox-text {
+        max-width: 80%;
+        flex-shrink: 0;
+        margin-top: var(--padding);
+        text-align: center;
+        font-style: italic;
+
+        #lightbox-caption {
+            opacity: 80%;
+            margin-bottom: var(--padding);
+            &:empty { display: none; }
+        }
+        p {
+            opacity: 50%;
+        }
+    }
+}

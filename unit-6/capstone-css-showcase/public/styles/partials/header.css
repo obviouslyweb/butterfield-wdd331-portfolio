@@ -1,0 +1,127 @@
+/* Header styling */
+
+header {
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: "Curse Casual";
+  
+  .header-left {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--padding);
+    
+    h1 {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, color-mix(in oklch, black 50%, white) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: white;
+      font-weight: normal;
+      
+      &:focus, &:hover {
+        color: white;
+      }
+
+      &.style-colon {
+        z-index: 1;
+        position: absolute;
+        left: 46px;
+        transform: scale(0.7);
+      }
+    }
+  }
+
+  img {
+    width: 40px;
+    border-radius: 10px;
+  }
+  
+  nav {
+    a {
+      font-size: 1.2em;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white;
+      padding: calc(var(--padding) * 0.5);
+      border-radius: var(--padding);
+      font-family: "Lexend";
+      transition: all 0.2s;
+      
+      &:hover {
+        color: color-mix(in oklch, var(--primary-color) 50%, white);
+        border: 2px solid color-mix(in oklch, var(--primary-color) 50%, white);
+      }
+    }
+  }
+
+  .header-right {
+    opacity: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.3em;
+
+    img {
+      width: auto;
+      height: 40px;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  header .header-right {
+    opacity: 100%;
+
+    /* Hide everything except the mobile button */
+    p, img:not(.mobile-menu-button) {
+      display: none;
+    }
+
+    .mobile-menu-button {
+      font-family: "Lexend", Helvetica;
+      display: flex;
+      color: color-mix(in oklch, var(--primary-color) 30%, white);
+      background: none;
+      padding: calc(var(--padding) * 0.5);
+      border: 2px solid color-mix(in oklch, var(--primary-color) 30%, white);
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 10px;
+      transition: all 0.2s;
+      margin: calc(var(--padding) * 0.5);
+      align-items: center;
+
+      svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        fill: color-mix(in oklch, var(--primary-color) 30%, white);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        font-weight: 500;
+        opacity: 100%;
+        color: white;
+        border: 2px solid white;
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+}

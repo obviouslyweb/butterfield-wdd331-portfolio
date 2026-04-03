@@ -1,0 +1,131 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,0.6);
+  padding: var(--padding);
+  gap: var(--padding);
+  color: white;
+  font-style: italic;
+  font-family: "Lexend", Helvetica;
+
+  .footer-left {
+    flex: 1; 
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .footer-marquee {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  }
+
+  .footer-marquee-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+    animation: marquee 12s linear infinite;
+    animation-play-state: var(--marquee-play-state, running);
+
+      &:hover {
+        --marquee-play-state: paused;
+      }
+
+      &.paused {
+        --marquee-play-state: paused;
+      }
+  }
+
+  .footer-marquee-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--padding);
+    padding-right: var(--padding);
+  }
+
+  .footer-card {
+    display: block;
+    opacity: 70%;
+
+    &:hover, &:focus {
+      opacity: 100%;
+    }
+  }
+
+  img {
+    margin-top: 3px;
+    max-height: 31px;
+    max-width: 100%;
+    border-radius: 3px;
+  }
+
+  p {
+    text-align: right;
+    color: white;
+    opacity: 50%;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-1 * var(--marquee-width))); }
+}
+
+/* disable marquee on mobile resolution */
+@media (max-width: 768px) {
+  footer {
+    max-height: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .footer-left {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .footer-marquee {
+      -webkit-mask-image: none;
+      mask-image: none;
+      overflow: visible;
+    }
+
+    .footer-marquee-track {
+      animation: none;
+      flex-wrap: wrap;
+      width: 100% !important;
+    }
+      
+    .footer-marquee-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--padding);
+      padding-right: var(--padding);
+      flex-wrap: wrap;
+
+      p {
+        flex: 1 1 200px;
+        min-width: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .mobile-disable {
+        display: none;
+      }
+    }
+
+    p {
+      text-align: left;
+      width: 100%;
+      flex-shrink: 1;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.iframe-wrapper {
+    overflow: scroll;
+
+    iframe {
+        margin-top: -90px;
+        margin-left: -20px;
+        height: calc(500px + 60px);
+        border: none;
+        width: 700px;
+    }
+}
+
+.hide-assets {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .iframe-wrapper {
+        iframe {
+            margin-left: 0px;
+        }
+    }
+}
