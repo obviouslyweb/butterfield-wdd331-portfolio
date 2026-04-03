@@ -1,4 +1,4 @@
-.card {
+.b-card {
     --card-color: white;
 
     display: flex;
@@ -9,39 +9,39 @@
     border-radius: 3px;
     gap: calc(var(--padding) * 0.5);
 
-    &.red {
-        --card-color: var(--soft-red);      
+    &.b-card--red {
+        --card-color: var(--soft-red);
     }
 
-    &.orange {
-        --card-color: var(--soft-orange);      
+    &.b-card--orange {
+        --card-color: var(--soft-orange);
     }
 
-    &.blue {
+    &.b-card--blue {
         --card-color: var(--soft-blue);
     }
 
-    &.green {
+    &.b-card--green {
         --card-color: var(--soft-green);
     }
 
-    &.purple {
+    &.b-card--purple {
         --card-color: var(--soft-purple);
     }
 
-    &.yellow {
+    &.b-card--yellow {
         --card-color: var(--soft-yellow);
     }
 
-    &.black {
+    &.b-card--black {
         --card-color: black;
     }
 
-    &.bg {
+    &.b-card--surface {
         background-color: color-mix(in oklch, var(--card-color) 20%, transparent);
         padding: var(--padding);
 
-        &.blur {
+        &.b-card--blur {
             backdrop-filter: blur(10px);
         }
     }
@@ -55,22 +55,22 @@
         display: block;
     }
 
-    img.wide {
+    img.u-media-wide {
         max-width: 600px;
     }
 
-    .footnote {
+    .b-prose-note {
         opacity: 75%;
     }
 }
 
-.graphic-cards {
+.b-graphic-grid {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: var(--padding);
 
-    .graphic-card {
+    .b-graphic-item {
         --card-color: rgb(0, 0, 0);
         
         background-color: color-mix(in oklch, var(--card-color) 20%, transparent);
@@ -80,11 +80,11 @@
         border-radius: 3px;
         gap: var(--padding);
 
-        .graphic-card-text {
+        .b-graphic-item__head {
             margin-bottom: var(--padding);
         }
         
-        .graphic-holder {
+        .b-graphic-item__holder {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -116,8 +116,12 @@
             }
         }
 
-        &.trans {
+        &.b-graphic-item--trans {
             background-color: transparent;
+        }
+
+        &.b-graphic-item--blue {
+            --card-color: var(--soft-blue);
         }
 
         img:not([src]), img[src=""] {
@@ -130,13 +134,13 @@
     }
 }
 
-.music-cards {
+.b-music-grid {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: var(--padding);
 
-    .music-card {
+    .b-music-item {
         --card-color: white;
         
         align-items: flex-start;
@@ -162,7 +166,7 @@
             }
         }
 
-        .music-card-info {
+        .b-music-item__meta {
             display: flex;
             flex-direction: column;
             gap:calc(var(--padding) * 0.5);
@@ -190,27 +194,27 @@
             }
         }
 
-        &.red {
+        &.b-music-item--red {
             --card-color: var(--soft-red);
         }
 
-        &.blue {
+        &.b-music-item--blue {
             --card-color: var(--soft-blue);
         }
 
-        &.green {
+        &.b-music-item--green {
             --card-color: var(--soft-green);
         }
 
-        &.purple {
+        &.b-music-item--purple {
             --card-color: var(--soft-purple);
         }
 
-        &.yellow {
+        &.b-music-item--yellow {
             --card-color: var(--soft-yellow);
         }
 
-        &.trans {
+        &.b-music-item--trans {
             background-color: transparent;
         }
 
@@ -224,7 +228,7 @@
     }
 }
 
-.park-card {
+.b-showcase {
     --card-color: white;
 
     display: flex;
@@ -235,48 +239,48 @@
     border-radius: 3px;
     gap: calc(var(--padding) * 2);
 
-    &.red {
-        --card-color: var(--soft-red);      
+    &.b-showcase--red {
+        --card-color: var(--soft-red);
     }
 
-    &.orange {
-        --card-color: var(--soft-orange);      
+    &.b-showcase--orange {
+        --card-color: var(--soft-orange);
     }
 
-    &.blue {
+    &.b-showcase--blue {
         --card-color: var(--soft-blue);
     }
 
-    &.green {
+    &.b-showcase--green {
         --card-color: var(--soft-green);
     }
 
-    &.purple {
+    &.b-showcase--purple {
         --card-color: var(--soft-purple);
     }
 
-    &.yellow {
+    &.b-showcase--yellow {
         --card-color: var(--soft-yellow);
     }
 
-    &.black {
+    &.b-showcase--black {
         --card-color: black;
 
-        .card-right p {
+        .b-showcase__body p {
             color: white;
         }
-        
-        .card-right .links a {
+
+        .b-showcase__body .b-link-row a {
             border-color: #cccccc;
             color: #cccccc;
         }
     }
 
-    &.bg {
+    &.b-showcase--surface {
         background-color: color-mix(in oklch, var(--card-color) 20%, transparent);
         padding: var(--padding);
 
-        &.blur {
+        &.b-showcase--blur {
             backdrop-filter: blur(10px);
         }
     }
@@ -290,155 +294,30 @@
         display: block;
     }
 
-    img.wide {
+    img.u-media-wide {
         max-width: 600px;
     }
 
-    .footnote {
+    .b-prose-note {
         opacity: 75%;
     }
 
-    .card-left {
+    .b-showcase__media {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
 
-    .card-right {
-        display: flex;
-        flex-direction: column;
-        gap: calc(var(--padding) * 0.5);
-
-        p {
-            color: var(--card-color);
-        }
-
-        ul {
-            line-height: 20px;
-        }
-    }
-
-    .links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--padding);
-        padding-top: calc(var(--padding));
-
-        a {
-            display: flex;
-            border: 2px solid var(--card-color);
-            padding: var(--padding);
-            border-radius: 7px;
-            font-weight: 500;
-            text-decoration: none;
-            justify-content: center;
-            align-items: center;
-            gap: var(--padding);
-            color: var(--card-color);
-
-            svg {
-                height: 1em;
-                width: auto;
-                fill: currentColor;
-            }
-            
-            &:focus, &:hover {
-                transform: scale(1.1);
-                box-shadow: 4px 4px 10pxblack;
-                color: white;
-                border-color: white;
-            }
-        }
-    }
-}
-
-.video-card {
-    --card-color: white;
-
-    display: flex;
-    background-color: transparent;
-    flex-direction: row;
-    padding-left: var(--padding);
-    border-left: 3px solid var(--card-color);
-    border-radius: 3px;
-    gap: calc(var(--padding) * 2);
-
-    &.red {
-        --card-color: var(--soft-red);      
-    }
-
-    &.orange {
-        --card-color: var(--soft-orange);      
-    }
-
-    &.blue {
-        --card-color: var(--soft-blue);
-    }
-
-    &.green {
-        --card-color: var(--soft-green);
-    }
-
-    &.purple {
-        --card-color: var(--soft-purple);
-    }
-
-    &.yellow {
-        --card-color: var(--soft-yellow);
-    }
-
-    &.black {
-        --card-color: black;
-
-        .card-right p {
-            color: white;
-        }
-        
-        .card-right .links a {
-            border-color: #cccccc;
-            color: #cccccc;
-        }
-    }
-
-    &.bg {
-        background-color: color-mix(in oklch, var(--card-color) 20%, transparent);
-        padding: var(--padding);
-
-        &.blur {
-            backdrop-filter: blur(10px);
-        }
-    }
-
-    a {
-        max-width: 100%;
-    }
-
-    img {
-        line-height: 0;
-        display: block;
-    }
-
-    img.wide {
-        max-width: 600px;
-    }
-
-    .footnote {
-        opacity: 75%;
-    }
-
-    .card-left {
-        display: flex;
-        flex-direction: column;
+    &.b-showcase--feature .b-showcase__media {
         gap: calc(var(--padding));
 
-        .img-logo {
+        .b-showcase__logo {
             margin-top: -12px;
             min-width: 100%;
         }
     }
 
-    .card-right {
+    .b-showcase__body {
         display: flex;
         flex-direction: column;
         gap: calc(var(--padding) * 0.5);
@@ -452,7 +331,7 @@
         }
     }
 
-    .links {
+    .b-link-row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -476,10 +355,11 @@
                 width: auto;
                 fill: currentColor;
             }
-            
-            &:focus, &:hover {
+
+            &:focus,
+            &:hover {
                 transform: scale(1.1);
-                box-shadow: 4px 4px 10pxblack;
+                box-shadow: 4px 4px 10px black;
                 color: white;
                 border-color: white;
             }
@@ -487,12 +367,12 @@
     }
 }
 
-.interests {
+.b-interest-stack {
     display: flex;
     flex-direction: column;
     gap: calc(var(--padding) * 0.5);
 
-    details {
+    details.b-interest-card {
         justify-items: center;
         --card-color: white;
         display: flex;
@@ -520,7 +400,7 @@
           font-weight: bold;
         }
 
-        .interest-detail {
+        .b-interest-card__body {
             margin-left: 15px;
             text-shadow: 2px 2px 2px black;
             line-height: 25px;
@@ -543,48 +423,47 @@
             }
         }
 
-        &.bg {
+        &.b-interest-card--surface {
             background-color: color-mix(in oklch, var(--card-color) 20%, transparent);
 
-            &.blur {
+            &.b-interest-card--blur {
                 backdrop-filter: blur(10px);
             }
         }
 
-        &.red {
-            --card-color: var(--soft-red);      
+        &.b-interest-card--red {
+            --card-color: var(--soft-red);
         }
 
-        &.orange {
-            --card-color: var(--soft-orange);      
+        &.b-interest-card--orange {
+            --card-color: var(--soft-orange);
         }
 
-        &.blue {
+        &.b-interest-card--blue {
             --card-color: var(--soft-blue);
         }
 
-        &.green {
+        &.b-interest-card--green {
             --card-color: var(--soft-green);
         }
 
-        &.purple {
+        &.b-interest-card--purple {
             --card-color: var(--soft-purple);
         }
 
-        &.yellow {
+        &.b-interest-card--yellow {
             --card-color: var(--soft-yellow);
         }
 
-        &.black {
+        &.b-interest-card--white {
+            --card-color: white;
+        }
+
+        &.b-interest-card--black {
             --card-color: black;
 
-            .card-right p {
+            .b-interest-card__body p {
                 color: white;
-            }
-            
-            .card-right .links a {
-                border-color: #cccccc;
-                color: #cccccc;
             }
         }
 
@@ -597,18 +476,18 @@
             display: block;
         }
 
-        img.wide {
+        img.u-media-wide {
             max-width: 600px;
         }
 
-        .footnote {
+        .b-prose-note {
             opacity: 75%;
         }
     }
 }
 
 
-.links {
+.b-link-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -633,7 +512,7 @@
         
         &:focus, &:hover {
             transform: scale(1.1);
-            box-shadow: 4px 4px 10pxblack;
+            box-shadow: 4px 4px 10px black;
             color: white;
             border-color: white;
         }
@@ -642,16 +521,16 @@
 
 @media (max-width: 756px) {
 
-    .links {
+    .b-link-row {
         flex-direction: column;
     }
 
-    .music-cards .music-card {
+    .b-music-grid .b-music-item {
         flex-direction: column;
     }
 
-    .park-card {
-        .card-left {
+    .b-showcase {
+        .b-showcase__media {
             text-align: left;
             padding-bottom: calc(var(--padding) * 0.5);
         }
@@ -659,13 +538,13 @@
         flex-direction: column;
     }
 
-    .video-card {
-        .card-left {
+    .b-showcase.b-showcase--feature {
+        flex-direction: column;
+
+        .b-showcase__media {
             text-align: left;
             gap: calc(var(--padding) * 0.5);
             padding-bottom: 0;
         }
-        
-        flex-direction: column;
     }
 }

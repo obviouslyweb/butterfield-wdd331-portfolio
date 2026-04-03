@@ -1,29 +1,34 @@
-.fancy-fun-text-woah {
-    margin-bottom: calc(var(--padding) * 3);
-    margin-left: calc(var(--padding) * 3);
-    margin-right: calc(var(--padding) * 3);
-    text-align: left;
+.u-display-heading {
+  margin-bottom: calc(var(--padding) * 3);
+  margin-left: calc(var(--padding) * 3);
+  margin-right: calc(var(--padding) * 3);
+  text-align: left;
 }
 
-.effect-wavy .effect-wavy-word {
-    display: inline-block;
-    white-space: nowrap;
+.b-effect-wavy .b-effect-wavy__word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
-.effect-wavy .effect-wavy-char {
-    display: inline-block;
-    animation: wave 2.5s ease-in-out infinite;
+.b-effect-wavy .b-effect-wavy__char {
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
 }
 
 @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @media (max-width: 768px) {
-    .fancy-fun-text-woah {
-        margin-bottom: calc(var(--padding));
-        margin-left: calc(var(--padding));
-        margin-right: calc(var(--padding));
-    }
+  .u-display-heading {
+    margin-bottom: calc(var(--padding));
+    margin-left: calc(var(--padding));
+    margin-right: calc(var(--padding));
+  }
 }

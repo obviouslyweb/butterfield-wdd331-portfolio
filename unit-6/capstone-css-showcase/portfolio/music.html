@@ -8,7 +8,6 @@
     <!-- Style & JS imports -->
     <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="../styles/effects.css" rel="stylesheet" type="text/css" media="all">
-    <link href="../styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
     <script src="../js/core.js" defer></script>
     <!-- LINKS: 88x31 button, favicon -->
     <link rel="icon" sizes="88x31" href="../images/buttons/tws-button.gif"/>
@@ -17,26 +16,26 @@
   </head>
   <body>
 
-    <header>
-      <a class="header-left" href="../home.html">
+    <header class="b-header">
+      <a class="b-header__brand" href="../home.html">
         <img src="../images/web-pfp.png" alt="Web profile picture, by crow-ig on tumblr">
-        <h1 class="style-colon" aria-hidden="true">:</h1>
-        <h1>TheWeb<span class="header-accent">Site</span></h1>
+        <h1 class="b-header__colon" aria-hidden="true">:</h1>
+        <h1>TheWeb<span class="b-header__accent">Site</span></h1>
       </a>
-      <div class="header-right">
-        <button type="button" class="mobile-menu-button">
+      <div class="b-header__tools">
+        <button type="button" class="b-header__menu">
           <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="svgTitle">Toggle Menu</title>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
           </svg>
         </button>
         <p>Internet home for</p>
-        <img class="twc_logo" src="../images/twclogo.png" alt="TheWebCon">
+        <img class="b-header__mark" src="../images/twclogo.png" alt="TheWebCon">
       </div>
     </header>
 
-    <main>
-      <nav class="sidebar">
+    <main class="l-with-sidebar">
+      <nav class="b-nav">
         <details open>
           <summary>Explore</summary>
           <a href="../home.html">Home</a>
@@ -62,17 +61,17 @@
           <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
           <a href="https://x.com/thewebconmusic">Twitter</a>
           <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
-          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+          <a class="u-link-quiet" href="https://thewebcon.carrd.co/">Old Website</a>
         </details>
       </nav>
 
-      <section class="core">
+      <section class="b-main">
 
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">without music, life would be a mistake</em></h2>
+        <h2 class="u-display-heading"><em class="b-effect-wavy">without music, life would be a mistake</em></h2>
         <p>Music is the spice of life, the thing that helps me get work done that I don't want to do as well as find meaning. To give back, I've started making my own music to give back to the artists who inspired me.</p>
         <p>You can find my music on the following platforms:</p>
 
-        <div class="links">
+        <div class="b-link-row">
           <a href="https://www.youtube.com/@obviouslyweb">
             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube Music</title><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></svg>
             <p>YouTube</p>
@@ -100,17 +99,17 @@
           </a>
       </div>
 
-        <p class="footnote">Please note that not all tracks may be present on certain platforms due to licensing restrictions, such as game covers or remixes.</p>
+        <p class="b-prose-note">Please note that not all tracks may be present on certain platforms due to licensing restrictions, such as game covers or remixes.</p>
 
         <p>For a sampling of my works, take a listen to the tracks below...</p>
 
-        <div class="music-cards">
+        <div class="b-music-grid">
 
-          <div class="music-card blue">
+          <div class="b-music-item b-music-item--blue">
             <a href="https://thewebcon.bandcamp.com/track/forgotten-system-settings">
               <img src="https://f4.bcbits.com/img/a4005619524_16.jpg">
             </a>
-            <div class="music-card-info">
+            <div class="b-music-item__meta">
               <h3>forgotten system settings</h3>
               <p><em>Somewhere in the world, a game console plays this track on loop indefinitely. It's ready for someone to pick up the controller, to move the cursor, to edit these settings that have been burning into the TV for hours... and yet, no one comes. And so the song plays, and plays, and plays...</em></p>
               <audio controls>
@@ -120,11 +119,11 @@
             </div>
           </div>
 
-          <div class="music-card purple">
+          <div class="b-music-item b-music-item--purple">
             <a href="https://on.soundcloud.com/RKytKCbVp7KiaQbzsT">
               <img src="https://i1.sndcdn.com/artworks-xe3oe2rlnSoyyQNR-AO6FZw-t1080x1080.jpg">
             </a>
-            <div class="music-card-info">
+            <div class="b-music-item__meta">
               <h3>We've Come So Far (Promising Tomorrows) - Orchestral Cover</h3>
               <p><em>Space Mountain is an iconic and popular roller-coaster at Disney theme parks across the world, but what you may not know is that it had a beautiful and triumphant main theme! Here's my full orchestrated cover of that track.</em></p>
               <audio controls>
@@ -134,11 +133,11 @@
             </div>
           </div>
 
-          <div class="music-card green">
+          <div class="b-music-item b-music-item--green">
             <a href="https://on.soundcloud.com/EfDj2Ti0y2CNI9Pfhj">
               <img src="https://i1.sndcdn.com/artworks-yCRAUMyRa6LCsCtE-oa3u2Q-t1080x1080.png">
             </a>
-            <div class="music-card-info">
+            <div class="b-music-item__meta">
               <h3>BIG SHOT - Cover</h3>
               <p><em>Late to the party by about 4 years, here's my cover of BIG SHOT from DELTARUNE Chapter 2.</em></p>
               <audio controls>
@@ -149,11 +148,11 @@
             </div>
           </div>
 
-          <div class="music-card yellow">
+          <div class="b-music-item b-music-item--yellow">
             <a href="https://soundcloud.com/user-360025828/gadget-room-chiptune-remix">
               <img src="https://i1.sndcdn.com/artworks-K7YY7v8JYvHOufFJ-axupUg-t1080x1080.jpg">
             </a>
-            <div class="music-card-info">
+            <div class="b-music-item__meta">
               <h3>Gadget Room - Chiptune Remix</h3>
               <p><em>Who knew a licensed kids game would have music this good?!</em></p>
               <audio controls>
@@ -163,11 +162,11 @@
             </div>
           </div>
 
-          <div class="music-card red">
+          <div class="b-music-item b-music-item--red">
             <a href="https://thewebcon.bandcamp.com/track/requiem-of-the-corrupt">
               <img src="https://i1.sndcdn.com/artworks-UMkGRO1nbSZaySlk-89VTlQ-t1080x1080.jpg">
             </a>
-            <div class="music-card-info">
+            <div class="b-music-item__meta">
               <h3>Requiem of the Corrupt</h3>
               <p><em>Tonight, we mourn the loss of those who have not yet passed.</em></p>
               <audio controls>
@@ -179,22 +178,22 @@
 
         </div>
 
-        <p class="footnote-clear"><a href="https://catbox.moe/">Audio hosting provided by Catbox!</a></p>
+        <p class="b-prose-note b-prose-note--clear"><a href="https://catbox.moe/">Audio hosting provided by Catbox!</a></p>
 
         <p>This isn't all the tracks I've made of course; for a full listing, I recommend checking out my Soundcloud or YouTube; they've got the most stuff that isn't anywhere else.</p>
 
       </section>
 
-      <img class="fade-img"src="#">
+      <img class="b-bg-fade"src="#">
     </main>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-marquee">
-          <div class="footer-marquee-track">
-            <div class="footer-marquee-content">
+    <footer class="b-footer">
+      <div class="b-footer__primary">
+        <div class="b-footer__marquee">
+          <div class="b-footer__track">
+            <div class="b-footer__ribbon">
               <!-- Content in here will be duplicated for marquee effect as needed -->
-              <a class="footer-card" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <a class="b-footer__link" href="https://www.firefox.com/"><img src="../images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
               <p><strong>This is an alternate version of my portfolio site</strong> meant for CSS project submission. To see the original hosted on Neocities, <a href="https://thewebcon.neocities.org/">click here!</a></p>
               <!-- Content in here will be duplicated for marquee effect as needed -->
             </div>

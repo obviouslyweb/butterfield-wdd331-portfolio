@@ -8,7 +8,6 @@
     <!-- Style & JS imports -->
     <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="styles/effects.css" rel="stylesheet" type="text/css" media="all">
-    <link href="styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
     <script src="js/core.js" defer></script>
     <!-- LINKS: 88x31 button, favicon -->
     <link rel="icon" sizes="88x31" href="images/buttons/tws-button.gif"/>
@@ -17,26 +16,26 @@
   </head>
   <body>
 
-    <header>
-      <a class="header-left" href="home.html">
+    <header class="b-header">
+      <a class="b-header__brand" href="home.html">
         <img src="images/web-pfp.png" alt="Web profile picture">
-        <h1 class="style-colon" aria-hidden="true">:</h1>
-        <h1>TheWeb<span class="header-accent">Site</span></h1>
+        <h1 class="b-header__colon" aria-hidden="true">:</h1>
+        <h1>TheWeb<span class="b-header__accent">Site</span></h1>
       </a>
-      <div class="header-right">
-        <button type="button" class="mobile-menu-button">
+      <div class="b-header__tools">
+        <button type="button" class="b-header__menu">
           <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="svgTitle">Toggle Menu</title>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
           </svg>
         </button>
         <p>Internet home for</p>
-        <img class="twc_logo" src="images/twclogo.png" alt="TheWebCon">
+        <img class="b-header__mark" src="images/twclogo.png" alt="TheWebCon">
       </div>
     </header>
 
-    <main>
-      <nav class="sidebar">
+    <main class="l-with-sidebar">
+      <nav class="b-nav">
         <details open>
           <summary>Explore</summary>
           <a href="home.html">Home</a>
@@ -62,23 +61,23 @@
           <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
           <a href="https://x.com/thewebconmusic">Twitter</a>
           <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
-          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+          <a class="u-link-quiet" href="https://thewebcon.carrd.co/">Old Website</a>
         </details>
       </nav>
 
-      <section class="core">
+      <section class="b-main">
 
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">stuff that makes me forget about the pain</em></h2>
+        <h2 class="u-display-heading"><em class="b-effect-wavy">stuff that makes me forget about the pain</em></h2>
         <p>Art should comfort the disturbed and disturb the comfortable, or something like that. Everything here are the things I think are so cool that I get invested and obsess over them a <em>totally normal amount,</em> from games to movies to other junk. Chances are, if you're a fan of something in here, there's something we could chat about!</p>
         <p>Obligatory "This isn't everything I've ever been interested in" notice; just the top favorites that I tend to think about a lot. This also isn't really in any particular order either.</p>
         <p>Since there's a <strong>LOT</strong> on this page, just feel free to open a category for what you want to know about.</p>
 
-        <h3 class="important red">NOTE: I'm still fleshing out this page! Some categories may not be completed yet as a result... sorry!</h3>
+        <h3 class="u-text-alert">NOTE: I'm still fleshing out this page! Some categories may not be completed yet as a result... sorry!</h3>
 
-        <div class="interests">
-          <details class="interest-card bg blue">
+        <div class="b-interest-stack">
+          <details class="b-interest-card b-interest-card--surface b-interest-card--blue">
             <summary>Games</summary>
-            <div class="interest-detail">
+            <div class="b-interest-card__body">
 
               <h4>On Nintendo</h4>
               <ul>
@@ -150,22 +149,22 @@
             </div>
           </details>
 
-          <details class="interest-card bg red">
+          <details class="b-interest-card b-interest-card--surface b-interest-card--red">
             <summary>Theme Parks</summary>
-            <div class="interest-detail">
+            <div class="b-interest-card__body">
               <ul>
                 <li>Disney Parks (worldwide)</li>
                 <li>Universal Parks (worldwide)</li>
                 <li><span>Epcot</span> - Favorite theme park of all time, even if it is falling a bit from the initial pitch of human connection and technological innovation.</li>
                 <li><span>DisneyQuest</span> - yeah this place kinda was left to rot but it was a fascinating time capsule to visit in 2016 before it got shut down and I liked it</li>
-                <li class="important red">More to be added soon...!</li>
+                <li class="u-text-alert">More to be added soon...!</li>
               </ul>
             </div>
           </details>
 
-          <details class="interest-card bg yellow">
+          <details class="b-interest-card b-interest-card--surface b-interest-card--yellow">
             <summary>Videos, Film, TV</summary>
-            <div class="interest-detail">
+            <div class="b-interest-card__body">
 
               <p>I mostly watch a ton of YouTube creators, but there's too many to list here right now... go and find what you like though!</p>
 
@@ -186,37 +185,37 @@
               </ul>
 
               <h4>Television</h4>
-              <p><strong class="important red">Coming Soon...</strong></p>
+              <p><strong class="u-text-alert">Coming Soon...</strong></p>
             </div>
           </details>
 
-          <details class="interest-card bg green">
+          <details class="b-interest-card b-interest-card--surface b-interest-card--green">
             <summary>Music</summary>
-            <div class="interest-detail">
-              <p><strong class="important red">Coming Soon...</strong></p>
+            <div class="b-interest-card__body">
+              <p><strong class="u-text-alert">Coming Soon...</strong></p>
             </div>
           </details>
 
-          <details class="interest-card bg white">
+          <details class="b-interest-card b-interest-card--surface b-interest-card--white">
             <summary>Other</summary>
-            <div class="interest-detail">
-              <p><strong class="important red">Coming Soon...</strong></p>
+            <div class="b-interest-card__body">
+              <p><strong class="u-text-alert">Coming Soon...</strong></p>
             </div>
           </details>
         </div>
 
       </section>
 
-      <img class="fade-img"src="#">
+      <img class="b-bg-fade"src="#">
     </main>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-marquee">
-          <div class="footer-marquee-track">
-            <div class="footer-marquee-content">
+    <footer class="b-footer">
+      <div class="b-footer__primary">
+        <div class="b-footer__marquee">
+          <div class="b-footer__track">
+            <div class="b-footer__ribbon">
               <!-- Content in here will be duplicated for marquee effect as needed -->
-              <a class="footer-card" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <a class="b-footer__link" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
               <p><strong>This is an alternate version of my portfolio site</strong> meant for CSS project submission. To see the original hosted on Neocities, <a href="https://thewebcon.neocities.org/">click here!</a></p>
               <!-- Content in here will be duplicated for marquee effect as needed -->
             </div>

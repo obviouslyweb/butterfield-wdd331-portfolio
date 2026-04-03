@@ -1,7 +1,4 @@
-// Wavy text for welcome page
-document.querySelectorAll('.effect-wavy').forEach(p => {
-    // animate per-character
-    // should preserve word boundaries for line wrapping
+document.querySelectorAll('.b-effect-wavy').forEach(p => {
     let charIndex = 0;
     const words = p.textContent.trim().split(/\s+/);
 
@@ -9,15 +6,13 @@ document.querySelectorAll('.effect-wavy').forEach(p => {
         const chars = [...word].map(char => {
             const delay = charIndex * -0.05;
             charIndex += 1;
-            return `<span class="effect-wavy-char" style="animation-delay: ${delay}s">${char}</span>`;
+            return `<span class="b-effect-wavy__char" style="animation-delay: ${delay}s">${char}</span>`;
         }).join('');
 
-        return `<span class="effect-wavy-word">${chars}</span>`;
+        return `<span class="b-effect-wavy__word">${chars}</span>`;
     }).join(' ');
-    // the css will then animate it
 });
 
-// Home page random images handler
 const home_imgs = [
     "ahit-clocktowers.png",
     "brick-avenue.jpg",
@@ -46,36 +41,32 @@ const home_imgs = [
     "tot-boiler.jpg",
     "tvrs-space.png",
     "wdw-down.jpg"
-]
+];
 
-const image_container = document.querySelector('.fade-img');
+const image_container = document.querySelector('.b-bg-fade');
 if (image_container) {
     const scriptEl = document.querySelector('script[src*="core.js"]');
     const scriptSrc = scriptEl?.getAttribute('src') || 'js/core.js';
     const resolvedScript = new URL(scriptSrc, window.location.href);
     const siteRootHref = resolvedScript.href.replace(/\/js\/core\.js$/i, '');
     let rand = Math.floor(Math.random() * home_imgs.length);
-    image_container.onload = () => image_container.classList.add('loaded');
+    image_container.onload = () => image_container.classList.add('is-loaded');
     image_container.src = `${siteRootHref}/images/bg/${home_imgs[rand]}`;
 }
 
-// Marquee footer
 const MARQUEE_SPEED = 30;
 
-const track = document.querySelector('.footer-marquee-track');
+const track = document.querySelector('.b-footer__track');
 if (track) {
-    const content = track.querySelector('.footer-marquee-content');
-    
+    const content = track.querySelector('.b-footer__ribbon');
+
     const fillMarquee = () => {
-        // remove clones
         while (track.children.length > 1) {
             track.removeChild(track.lastChild);
         }
 
-        // check if mobile (if so cancel)
         if (window.matchMedia('(max-width: 768px)').matches) return;
-        
-        // generate clones as needed
+
         const singleWidth = content.offsetWidth;
         const minWidth = track.parentElement.offsetWidth * 2;
         while (track.scrollWidth < minWidth) {
@@ -121,12 +112,11 @@ if (track) {
     });
 }
 
-// Mobile menu feature
-document.querySelector('.mobile-menu-button').addEventListener('mouseup', () => {
-    const sidebar = document.querySelector('.sidebar');
-    const core = document.querySelector('.core');
+document.querySelector('.b-header__menu')?.addEventListener('mouseup', () => {
+    const sidebar = document.querySelector('.b-nav');
+    const core = document.querySelector('.b-main');
     if (sidebar && core) {
-        const isOpening = !sidebar.classList.contains('visible');
+        const isOpening = !sidebar.classList.contains('is-open');
         if (isOpening) {
             const lockedWidth = core.offsetWidth;
             core.style.width = lockedWidth + 'px';
@@ -139,18 +129,16 @@ document.querySelector('.mobile-menu-button').addEventListener('mouseup', () => 
             core.style.maxWidth = '';
             core.style.flexShrink = '';
         }
-        sidebar.classList.toggle('visible');
+        sidebar.classList.toggle('is-open');
     }
 });
 
-// Lightbox for designs page
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.getElementById('lightbox-caption');
 
-if (lightbox && lightboxImg) {
-    // Designs page
-    document.querySelectorAll('.graphic-holder img').forEach(img => {
+if (lightbox && lightboxImg && lightboxCaption) {
+    document.querySelectorAll('.b-graphic-item__holder img').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', () => {
             lightboxImg.src = img.src;
@@ -158,12 +146,11 @@ if (lightbox && lightboxImg) {
             const caption = img.dataset.caption ?? '';
             lightboxCaption.innerHTML = caption;
             lightbox.classList.toggle('has-caption', caption !== '');
-            lightbox.classList.add('active');
+            lightbox.classList.add('is-active');
         });
     });
 
-    // Blog page
-    document.querySelectorAll('.card img.allow-lightbox').forEach(img => {
+    document.querySelectorAll('.b-card img.u-lightbox').forEach(img => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', () => {
             lightboxImg.src = img.src;
@@ -171,32 +158,29 @@ if (lightbox && lightboxImg) {
             const caption = img.dataset.caption ?? '';
             lightboxCaption.innerHTML = caption;
             lightbox.classList.toggle('has-caption', caption !== '');
-            lightbox.classList.add('active');
+            lightbox.classList.add('is-active');
         });
     });
 
     lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
+        lightbox.classList.remove('is-active');
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') lightbox.classList.remove('active');
+        if (e.key === 'Escape') lightbox.classList.remove('is-active');
     });
 }
 
-// Sidebar animation
 document.querySelectorAll('details').forEach(details => {
   const summary = details.querySelector('summary');
 
-  // wrap non-summary children in a div
   const wrapper = document.createElement('div');
-  wrapper.classList.add('details-content');
+  wrapper.classList.add('u-details-body');
   [...details.children].forEach(el => {
     if (el.tagName !== 'SUMMARY') wrapper.appendChild(el);
   });
   details.appendChild(wrapper);
 
-  // set height immediately
   if (details.open) {
     wrapper.style.height = 'auto';
   } else {
@@ -207,7 +191,6 @@ document.querySelectorAll('details').forEach(details => {
     e.preventDefault();
 
     if (details.open) {
-      // closing
       wrapper.style.height = wrapper.scrollHeight + 'px';
       requestAnimationFrame(() => requestAnimationFrame(() => {
         wrapper.style.height = '0';
@@ -216,7 +199,6 @@ document.querySelectorAll('details').forEach(details => {
         details.removeAttribute('open');
       }, { once: true });
     } else {
-      // opening
       details.setAttribute('open', '');
       wrapper.style.height = '0';
       requestAnimationFrame(() => requestAnimationFrame(() => {

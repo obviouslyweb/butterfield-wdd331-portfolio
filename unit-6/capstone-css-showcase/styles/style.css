@@ -1,6 +1,8 @@
 @import url("partials/header.css");
 @import url("partials/footer.css");
 @import url("core.css");
+@import url("partials/card.css");
+@import url("partials/lightbox.css");
 
 @font-face {
   font-family: "Curse Casual";

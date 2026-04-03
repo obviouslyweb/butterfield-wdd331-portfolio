@@ -8,8 +8,6 @@
     <!-- Style & JS imports -->
     <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="../styles/effects.css" rel="stylesheet" type="text/css" media="all">
-    <link href="../styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
-    <link href="../styles/partials/lightbox.css" rel="stylesheet" type="text/css" media="all">
     <script src="../js/core.js" defer></script>
     <!-- LINKS: 88x31 button, favicon -->
     <link rel="icon" sizes="88x31" href="../images/buttons/tws-button.gif"/>
@@ -18,26 +16,26 @@
   </head>
 
   <body>
-    <header>
-      <a class="header-left" href="../home.html">
+    <header class="b-header">
+      <a class="b-header__brand" href="../home.html">
         <img src="../images/web-pfp.png" alt="Web profile picture, by crow-ig on tumblr">
-        <h1 class="style-colon" aria-hidden="true">:</h1>
-        <h1><span class="header-accent">TheWebSite</span></h1>
+        <h1 class="b-header__colon" aria-hidden="true">:</h1>
+        <h1><span class="b-header__accent">TheWebSite</span></h1>
       </a>
-      <div class="header-right">
-        <button type="button" class="mobile-menu-button">
+      <div class="b-header__tools">
+        <button type="button" class="b-header__menu">
           <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="svgTitle">Toggle Menu</title>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
           </svg>
         </button>
         <p>Internet home for</p>
-        <img class="twc_logo" src="../images/twclogo.png" alt="TheWebCon">
+        <img class="b-header__mark" src="../images/twclogo.png" alt="TheWebCon">
       </div>
     </header>
 
-    <main>
-      <nav class="sidebar">
+    <main class="l-with-sidebar">
+      <nav class="b-nav">
         <details open>
           <summary>Explore</summary>
           <a href="../home.html">Home</a>
@@ -63,26 +61,26 @@
           <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
           <a href="https://x.com/thewebconmusic">Twitter</a>
           <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
-          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+          <a class="u-link-quiet" href="https://thewebcon.carrd.co/">Old Website</a>
         </details>
       </nav>
 
-      <section class="core">
+      <section class="b-main">
 
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">i hate premiere pro</em></h2>
+        <h2 class="u-display-heading"><em class="b-effect-wavy">i hate premiere pro</em></h2>
 
         <p>I've come a long way from using iMovie to make videos. Part of that progress was ditching Apple's ecosystem (only to run straight into Adobe's, like running from one burning building to another), but hey, video editing is a very rewarding and enjoyable hobby even if Premiere Pro makes me want to pull my hair out sometimes!</p>
 
-        <p class="footnote">I really need to learn how to use DaVinci Resolve already...</p>
+        <p class="b-prose-note">I really need to learn how to use DaVinci Resolve already...</p>
 
         <p>Here are some of the channels I run and the videos I make on them.</p>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
-            <img class="img-logo" src="../images/portfolio/designs/logos/logo-tdrz-text.png" alt="The Dark Ride Zone">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
+            <img class="b-showcase__logo" src="../images/portfolio/designs/logos/logo-tdrz-text.png" alt="The Dark Ride Zone">
             <iframe width="400" height="225" src="https://www.youtube.com/embed/nKjqJuBBJ_M?si=s4UfgIILHpy8LgrB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
+          <div class="b-showcase__body">
             <p><em><strong>Join me and wander into the Dark Ride Zone.</strong></em></p>
 
             <p>The Dark Ride Zone is a theme-park focused variety channel created by TheWebCon, featuring two types of videos:</p>
@@ -92,81 +90,81 @@
             </ul>
 
             <p>As The Dark Ride Zone is a very unique channel, its content requires a lot of additional work, which means videos take a LONG time to come out. But I am really passionate about the project still, and want to keep making more videos for it, so if you like what you see, don't hesitate to subscribe!</p>
-            <div class="links">
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@TheDarkRideZone" target="_blank">TDRZ Channel</a>
               <a href="https://tdrz.carrd.co/" target="_blank">TDRZ Website</a>
             </div>
           </div>
         </div>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
             <h2>MCTP-Related Videos</h2>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/83lY9-5c-5g?si=-PfBqgoCFZsu_Wxf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
+          <div class="b-showcase__body">
             <p>Since I like creating theme parks in Minecraft, I also like to make those theme parks have cool trailers and videos. Even if nobody watches them, it makes it feel even more legit, ya know?</p>
             <p>I've created trailers for projects, POVs and ridethroughs, and other strange miscellaneous stuff, mostly for Fuse and Solar7 Adventure projects. If you want to learn more about those, you should check out the <a href="mctp.html">Fuse & MCTP</a> page, but if you just want to watch the videos, the channels are linked below.</p>
-            <div class="links">
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@FuseEntCo" target="_blank">Fuse Channel</a>
               <a href="https://www.youtube.com/@Solar7Adventure" target="_blank">Solar7 Adventure Channel</a>
             </div>
           </div>
         </div>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
             <h2>Song Visualizers</h2>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/U0vFPf-gJ_Y?si=Z9xG6qkL5sTDDcyf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
+          <div class="b-showcase__body">
             <p>I don't know about you, but when I'm listening to music on YouTube, having a visualizer of some kind is REALLY cool. I also make music, so I have the control to do just that for my own music projects. As a result, I've made a lot of different visualizers for my songs and like to really test my editing skills and see how cool looking I can make them.</p>
-            <p class="footnote">For example, the video in this card (a visualizer for an original song titled <em>forgotten system settings</em>) was hand-edited by yours truly. After making the album cover art, I exported all the assets from that and recreated it, then animated it with keyframes to simulate a real interface. Did it take forever and also nearly kill my sanity? Let me answer that question with a question: isn't it cool looking?</p>
+            <p class="b-prose-note">For example, the video in this card (a visualizer for an original song titled <em>forgotten system settings</em>) was hand-edited by yours truly. After making the album cover art, I exported all the assets from that and recreated it, then animated it with keyframes to simulate a real interface. Did it take forever and also nearly kill my sanity? Let me answer that question with a question: isn't it cool looking?</p>
             <p>Song visualizers are posted to my main channel, TheWebCon, when music is released.</p>
-            <div class="links">
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@obviouslyweb" target="_blank">TheWebCon Channel</a>
             </div>
           </div>
         </div>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
             <h2>Gameplay Highlights</h2>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/uNVIjickFmk?si=ouuFkihsWDx5Ibkf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
+          <div class="b-showcase__body">
             <p>I also play games sometimes, and on occasion I'll want to record the experience. I haven't done this much so far but I really enjoy the process and would like to keep doing it. They're uploaded to my main channel if you want to see them.</p>
-            <p class="footnote">There was also this time I recorded myself playing ANIMAL WELL for the first time, edited the video and nearly finished it, but then the source file got corrupted and I had no backup and I lost everything... that REALLY hurt, but boy did it teach me about backups</p>
-            <div class="links">
+            <p class="b-prose-note">There was also this time I recorded myself playing ANIMAL WELL for the first time, edited the video and nearly finished it, but then the source file got corrupted and I had no backup and I lost everything... that REALLY hurt, but boy did it teach me about backups</p>
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@obviouslyweb" target="_blank">TheWebCon Channel</a>
             </div>
           </div>
         </div>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
             <h2>Relaxing Music Compliations</h2>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/6Iqn2rQRmLI?si=UwWi9_asWAs5ahhx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
+          <div class="b-showcase__body">
             <p>I've listened to so many "<em>relaxing nintendo music to study/sleep/relax/implode to</em>" videos that I decided I should try my hand at making them. I want to make ones that don't already exist and fulfill niche categories, like less popular game soundtracks or theme park music.</p>
             <p>I've made a few of these already and have ideas for more, so if you want some niche study music, check out my "TheWebCon Plus" channel; it's where I upload these kinds of compilations.</p>
             <p>Happy studying/relaxing/chilling/imploding/whatever you do while listening to these videos!</p>
-            <div class="links">
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@TheWebConPlus" target="_blank">TWC+ Channel</a>
             </div>
           </div>
         </div>
 
-        <div class="video-card black bg blur">
-          <div class="card-left">
+        <div class="b-showcase b-showcase--feature b-showcase--black b-showcase--surface b-showcase--blur">
+          <div class="b-showcase__media">
             <h2>Clips, Meme Edits, Etc.</h2>
             <iframe width="400" height="225" src="https://www.youtube.com/embed/XQaagAUI_i4?si=hFwuFYxrKVIw2jQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div class="card-right">
-            <p class="footnote">What do I even say about this?</p>
+          <div class="b-showcase__body">
+            <p class="b-prose-note">What do I even say about this?</p>
             <p>I also make dumb stuff for the sake of making dumb stuff. They're on the "TheWebCon Plus" channel if you want to see them.</p>
-            <div class="links">
+            <div class="b-link-row">
               <a href="https://www.youtube.com/@TheWebConPlus" target="_blank">TWC+ Channel</a>
             </div>
           </div>
@@ -174,16 +172,16 @@
         
       </section>
 
-      <img class="fade-img"src="#">
+      <img class="b-bg-fade"src="#">
     </main>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-marquee">
-          <div class="footer-marquee-track">
-            <div class="footer-marquee-content">
+    <footer class="b-footer">
+      <div class="b-footer__primary">
+        <div class="b-footer__marquee">
+          <div class="b-footer__track">
+            <div class="b-footer__ribbon">
               <!-- Content in here will be duplicated for marquee effect as needed -->
-              <a class="footer-card" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <a class="b-footer__link" href="https://www.firefox.com/"><img src="../images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
               <p><strong>This is an alternate version of my portfolio site</strong> meant for CSS project submission. To see the original hosted on Neocities, <a href="https://thewebcon.neocities.org/">click here!</a></p>
               <!-- Content in here will be duplicated for marquee effect as needed -->
             </div>

@@ -1,195 +1,128 @@
-/* Styles specific to the INDEX page */
-/* (social links & enter links) */
+@import url(../effects/wavy.css);
+@import url(../effects/fade.css);
 
-@import url(effects/wavy.css);
-@import url(effects/fade.css);
-
-main {
-    padding: var(--padding);
-    flex: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+main.l-splash {
+  padding: var(--padding);
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.index-contents {
-    margin: 0 auto;
+.l-splash__inner {
+  margin: 0 auto;
 }
 
-.index-buttons {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    margin: 0 auto;
-    justify-content: center;
+.l-splash__actions {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-.social-link-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: calc(var(--padding) * 2);
-    
-    .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        color: color-mix(in oklch, var(--primary-color) 30%, white);
+.l-splash__social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: calc(var(--padding) * 2);
 
-        border: 3px solid color-mix(in oklch, var(--primary-color) 30%, white);
-        font-size: 2em;
-        border-radius: 10px;
-        height: clamp(60px, 80px, 100px);
-        transition: all 0.2s;
-
-        &:hover {
-            color: white;
-            border: 3px solid white;
-            transform: scale(1.05);
-        }
-
-        /* Removed this for visibility reasons, but may reuse for something else later */
-        /* .color-shift {
-            &#red {
-                color: rgb(255, 103, 103)
-            }
-
-            &#white {
-                color: rgb(178, 178, 178);
-            }
-
-            &#blurple {
-                color: rgb(188, 205, 255);
-            }
-
-            &#black {
-                color: rgb(167, 167, 167);
-            }
-
-            &#blue {
-                color: rgb(60, 115, 255);
-            }
-        } */
-    }
-}
-
-@property --pulse {
-    syntax: '<number>';
-    inherits: false;
-    initial-value: 1;
-}
-
-.entry-button {
-    margin-bottom: calc(var(--padding) * 2);
+  .b-social-link {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
+    color: color-mix(in oklch, var(--primary-color) 30%, white);
+    border: 3px solid color-mix(in oklch, var(--primary-color) 30%, white);
     font-size: 2em;
     border-radius: 10px;
     height: clamp(60px, 80px, 100px);
-    border: 3px solid;
-    animation: entry-shift 2s ease infinite;
+    transition: all 0.2s;
 
     &:hover {
-        animation: entry-shift 2s ease infinite, entry-pulse 0.2s ease-in-out infinite alternate;
+      color: white;
+      border: 3px solid white;
+      transform: scale(1.05);
     }
+  }
+}
+
+@property --pulse {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+.b-entry {
+  margin-bottom: calc(var(--padding) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 2em;
+  border-radius: 10px;
+  height: clamp(60px, 80px, 100px);
+  border: 3px solid;
+  animation: entry-shift 2s ease infinite;
+
+  &:hover {
+    animation:
+      entry-shift 2s ease infinite,
+      entry-pulse 0.2s ease-in-out infinite alternate;
+  }
 }
 
 @keyframes entry-pulse {
-    0%   { transform: scale(1); }
-    100% { transform: scale(1.06); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
 }
 
 @keyframes entry-shift {
-    0%   { border-color: color-mix(in oklch, var(--secondary-color) 50%, white);   color: color-mix(in oklch, var(--secondary-color) 50%, white); }
-    50%  { border-color: color-mix(in oklch, var(--primary-color) 0%, white); color: color-mix(in oklch, var(--primary-color) 0%, white); }
-    100% { border-color: color-mix(in oklch, var(--secondary-color) 50%, white);   color: color-mix(in oklch, var(--secondary-color) 50%, white); }
+  0% {
+    border-color: color-mix(in oklch, var(--secondary-color) 50%, white);
+    color: color-mix(in oklch, var(--secondary-color) 50%, white);
+  }
+  50% {
+    border-color: color-mix(in oklch, var(--primary-color) 0%, white);
+    color: color-mix(in oklch, var(--primary-color) 0%, white);
+  }
+  100% {
+    border-color: color-mix(in oklch, var(--secondary-color) 50%, white);
+    color: color-mix(in oklch, var(--secondary-color) 50%, white);
+  }
 }
 
-.fade-img {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
-    
-    &.loaded {
-        opacity: 1;
-    }
-}
-
-.fancy-fun-text-woah {
-    text-align: center;
+main.l-splash .u-display-heading {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
+  .l-splash__inner {
+    width: 90%;
+    margin-top: 20px;
+  }
 
-    .index-contents {
-        width: 90%;
-        margin-top: 20px;
+  main.l-splash .u-display-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .l-splash__social {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--padding);
+
+    .b-social-link {
+      font-size: 1.6em;
+      gap: var(--padding);
     }
+  }
 
-    .fancy-fun-text-woah {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .fade-img {
-        height: 80vh;
-        width: auto;
-        min-width: 100%;
-    }
-
-    .social-link-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--padding);
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            color: color-mix(in oklch, var(--primary-color) 30%, white);
-            gap: var(--padding);
-            border: 3px solid color-mix(in oklch, var(--primary-color) 30%, white);
-            font-size: 1.6em;
-            border-radius: 10px;
-            height: clamp(60px, 80px, 100px);
-            transition: all 0.2s;
-
-            &:hover {
-                color: white;
-                border: 3px solid white;
-                transform: scale(1.05);
-            }
-        }
-    }
-
-    .entry-button {
-        margin-bottom: var(--padding);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        font-size: 2em;
-        border-radius: 10px;
-        height: clamp(60px, 80px, 100px);
-        border: 3px solid;
-        animation: entry-shift 2s ease infinite;
-
-        &:hover {
-            animation: entry-shift 2s ease infinite, entry-pulse 0.2s ease-in-out infinite alternate;
-        }
-    }
+  .b-entry {
+    margin-bottom: var(--padding);
+  }
 }

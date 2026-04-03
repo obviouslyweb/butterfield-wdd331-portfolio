@@ -1,14 +1,12 @@
-/* Header styling */
-
-header {
+.b-header {
   padding: var(--padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
-  font-family: "Curse Casual";
-  
-  .header-left {
+  font-family: "Curse Casual", cursive;
+
+  .b-header__brand {
     position: relative;
     color: inherit;
     text-decoration: none;
@@ -16,7 +14,7 @@ header {
     align-items: center;
     flex-direction: row;
     gap: var(--padding);
-    
+
     h1 {
       background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, color-mix(in oklch, black 50%, white) 100%);
       -webkit-background-clip: text;
@@ -24,12 +22,13 @@ header {
       -webkit-text-fill-color: transparent;
       color: white;
       font-weight: normal;
-      
-      &:focus, &:hover {
+
+      &:focus,
+      &:hover {
         color: white;
       }
 
-      &.style-colon {
+      &.b-header__colon {
         z-index: 1;
         position: absolute;
         left: 46px;
@@ -42,26 +41,24 @@ header {
     width: 40px;
     border-radius: 10px;
   }
-  
-  nav {
-    a {
-      font-size: 1.2em;
-      color: white;
-      text-decoration: none;
-      border: 2px solid white;
-      padding: calc(var(--padding) * 0.5);
-      border-radius: var(--padding);
-      font-family: "Lexend";
-      transition: all 0.2s;
-      
-      &:hover {
-        color: color-mix(in oklch, var(--primary-color) 50%, white);
-        border: 2px solid color-mix(in oklch, var(--primary-color) 50%, white);
-      }
+
+  nav a {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: calc(var(--padding) * 0.5);
+    border-radius: var(--padding);
+    font-family: "Lexend", Helvetica, sans-serif;
+    transition: all 0.2s;
+
+    &:hover {
+      color: color-mix(in oklch, var(--primary-color) 50%, white);
+      border: 2px solid color-mix(in oklch, var(--primary-color) 50%, white);
     }
   }
 
-  .header-right {
+  .b-header__tools {
     opacity: 50%;
     display: flex;
     flex-direction: row;
@@ -80,17 +77,16 @@ header {
 }
 
 @media (max-width: 768px) {
-
-  header .header-right {
+  .b-header .b-header__tools {
     opacity: 100%;
 
-    /* Hide everything except the mobile button */
-    p, img:not(.mobile-menu-button) {
+    p,
+    img:not(.b-header__menu) {
       display: none;
     }
 
-    .mobile-menu-button {
-      font-family: "Lexend", Helvetica;
+    .b-header__menu {
+      font-family: "Lexend", Helvetica, sans-serif;
       display: flex;
       color: color-mix(in oklch, var(--primary-color) 30%, white);
       background: none;

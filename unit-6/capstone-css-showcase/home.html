@@ -8,7 +8,6 @@
     <!-- Style & JS imports -->
     <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="styles/effects.css" rel="stylesheet" type="text/css" media="all">
-    <link href="styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
     <script src="js/core.js" defer></script>
     <!-- LINKS: 88x31 button, favicon -->
     <link rel="icon" sizes="88x31" href="images/buttons/tws-button.gif"/>
@@ -17,26 +16,26 @@
   </head>
   <body>
 
-    <header>
-      <a class="header-left" href="home.html">
+    <header class="b-header">
+      <a class="b-header__brand" href="home.html">
         <img src="images/web-pfp.png" alt="Web profile picture">
-        <h1 class="style-colon" aria-hidden="true">:</h1>
-        <h1>TheWeb<span class="header-accent">Site</span></h1>
+        <h1 class="b-header__colon" aria-hidden="true">:</h1>
+        <h1>TheWeb<span class="b-header__accent">Site</span></h1>
       </a>
-      <div class="header-right">
-        <button type="button" class="mobile-menu-button">
+      <div class="b-header__tools">
+        <button type="button" class="b-header__menu">
           <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="svgTitle">Toggle Menu</title>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
           </svg>
         </button>
         <p>Internet home for</p>
-        <img class="twc_logo" src="images/twclogo.png" alt="TheWebCon">
+        <img class="b-header__mark" src="images/twclogo.png" alt="TheWebCon">
       </div>
     </header>
 
-    <main>
-      <nav class="sidebar">
+    <main class="l-with-sidebar">
+      <nav class="b-nav">
         <details open>
           <summary>Explore</summary>
           <a href="home.html">Home</a>
@@ -62,26 +61,26 @@
           <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
           <a href="https://x.com/thewebconmusic">Twitter</a>
           <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
-          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+          <a class="u-link-quiet" href="https://thewebcon.carrd.co/">Old Website</a>
         </details>
       </nav>
 
-      <section class="core">
+      <section class="b-main">
 
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">welcome to my corner of the internet!</em></h2>
+        <h2 class="u-display-heading"><em class="b-effect-wavy">welcome to my corner of the internet!</em></h2>
         <p>Howdy! I'm Web, an artist, programmer, composer, video editor, performer, and everything in-between. A creative type, basically.</p>
         <p>I'm glad you decided to stop by. TheWebSite is meant to be a comfortable reprieve for myself from the rest of the web, and maybe it can be one for you too.</p>
-        <!-- <p><strong class="important red">NOTE: Some pages are complete, but others are still a work in progress and some don't even exist yet. I'm actively working on it though, and hope you'll stick around to see it finished!</strong></p> -->
+        <!-- <p><strong class="u-text-alert">NOTE: Some pages are complete, but others are still a work in progress and some don't even exist yet. I'm actively working on it though, and hope you'll stick around to see it finished!</strong></p> -->
         <p>Feel free to explore the site through the sidebar on the left, and keep an eye out for a secret or two...!</p>
 
-        <div class="card orange bg blur">
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">spotlight for things i find cool</em></h2>
+        <div class="b-card b-card--orange b-card--surface b-card--blur">
+        <h2 class="u-display-heading"><em class="b-effect-wavy">spotlight for things i find cool</em></h2>
         <p>This video convinced me to get back into drawing, its really good</p>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/CtzSHVh0mgw?si=dpknNjlcdqrMDHmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-        <div class="card">
-          <h2 class="fancy-fun-text-woah"><em class="effect-wavy">to-do list</em></h2>
+        <div class="b-card">
+          <h2 class="u-display-heading"><em class="b-effect-wavy">to-do list</em></h2>
           <p>As the site is still in production, here's a list of things I want to take care of the next time I have free time:</p>
           <ul>
             <li>Add pfp hover effect</li>
@@ -92,16 +91,16 @@
         </div>
       </section>
 
-      <img class="fade-img"src="#">
+      <img class="b-bg-fade"src="#">
     </main>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-marquee">
-          <div class="footer-marquee-track">
-            <div class="footer-marquee-content">
+    <footer class="b-footer">
+      <div class="b-footer__primary">
+        <div class="b-footer__marquee">
+          <div class="b-footer__track">
+            <div class="b-footer__ribbon">
               <!-- Content in here will be duplicated for marquee effect as needed -->
-              <a class="footer-card" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <a class="b-footer__link" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
               <p><strong>This is an alternate version of my portfolio site</strong> meant for CSS project submission. To see the original hosted on Neocities, <a href="https://thewebcon.neocities.org/">click here!</a></p>
               <!-- Content in here will be duplicated for marquee effect as needed -->
             </div>

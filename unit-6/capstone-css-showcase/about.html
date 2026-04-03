@@ -8,7 +8,6 @@
     <!-- Style & JS imports -->
     <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
     <link href="styles/effects.css" rel="stylesheet" type="text/css" media="all">
-    <link href="styles/partials/card.css" rel="stylesheet" type="text/css" media="all">
     <script src="js/core.js" defer></script>
     <!-- LINKS: 88x31 button, favicon -->
     <link rel="icon" sizes="88x31" href="images/buttons/tws-button.gif"/>
@@ -17,26 +16,26 @@
   </head>
   <body>
 
-    <header>
-      <a class="header-left" href="home.html">
+    <header class="b-header">
+      <a class="b-header__brand" href="home.html">
         <img src="images/web-pfp.png" alt="Web profile picture">
-        <h1 class="style-colon" aria-hidden="true">:</h1>
-        <h1>TheWeb<span class="header-accent">Site</span></h1>
+        <h1 class="b-header__colon" aria-hidden="true">:</h1>
+        <h1>TheWeb<span class="b-header__accent">Site</span></h1>
       </a>
-      <div class="header-right">
-        <button type="button" class="mobile-menu-button">
+      <div class="b-header__tools">
+        <button type="button" class="b-header__menu">
           <svg aria-labelledby="svgTitle" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title id="svgTitle">Toggle Menu</title>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"/>
           </svg>
         </button>
         <p>Internet home for</p>
-        <img class="twc_logo" src="images/twclogo.png" alt="TheWebCon">
+        <img class="b-header__mark" src="images/twclogo.png" alt="TheWebCon">
       </div>
     </header>
 
-    <main>
-      <nav class="sidebar">
+    <main class="l-with-sidebar">
+      <nav class="b-nav">
         <details open>
           <summary>Explore</summary>
           <a href="home.html">Home</a>
@@ -62,20 +61,20 @@
           <a href="https://www.youtube.com/@obviouslyweb">YouTube</a>
           <a href="https://x.com/thewebconmusic">Twitter</a>
           <a href="https://www.tumblr.com/thewebcon">Tumblr</a>
-          <a class="soft" href="https://thewebcon.carrd.co/">Old Website</a>
+          <a class="u-link-quiet" href="https://thewebcon.carrd.co/">Old Website</a>
         </details>
       </nav>
       
-      <section class="core">
-        <h2 class="fancy-fun-text-woah"><em class="effect-wavy">howdy, I'm <strong>web</strong>. nice to meet you!</em></h2>
-        <p class="footnote">thewebcon | web | obviouslyweb | he/him | adult | infj</p>
+      <section class="b-main">
+        <h2 class="u-display-heading"><em class="b-effect-wavy">howdy, I'm <strong>web</strong>. nice to meet you!</em></h2>
+        <p class="b-prose-note">thewebcon | web | obviouslyweb | he/him | adult | infj</p>
         <p>I've always been a creative type. Now, thanks to this website, I can carve out my own little space for myself on the World Wide Web! That's right folks; the Web is on the Web!</p>
-        <p class="footnote">*crickets chirping*</p>
+        <p class="b-prose-note">*crickets chirping*</p>
         <p><em>Come on, I thought it was funny...</em></p>
         <p>I'm a college student who is (at the time of writing) completing my final semester for a degree in computer science and web design.</p>
-        <p class="footnote">imagine my surprise when I find out about neocities and can finally put my knowledge to good use</p>
+        <p class="b-prose-note">imagine my surprise when I find out about neocities and can finally put my knowledge to good use</p>
         <p>I like to make a ton of things, many of which you can find on that sidebar to the left under the 'Creations' section. About some of it...</p>
-        <div class="card bg orange">
+        <div class="b-card b-card--surface b-card--orange">
           <h2>Music</h2>
           <p>I like to write music, think about writing music, study and analyze music, go bowling and perform music.</p>
           <h2>Programming</h2>
@@ -84,20 +83,20 @@
           <p>Video production is fun and it makes my brain happy, so I tend to do on occasion. For now my videos are primarily focused on my music projects or are related to theme parks.</p>
           <h2>Graphics</h2>
           <p>Oh yeah, I also like making cool images, logos, backgrounds, fonts, designs, layouts, and <em>attempting</em> to draw characters before giving up for another few weeks.</p>
-          <p class="footnote">To see more details on my Creative endavours, please see the pages under the 'Creations' section on the navigation sidebar!</p>
+          <p class="b-prose-note">To see more details on my Creative endavours, please see the pages under the 'Creations' section on the navigation sidebar!</p>
         </div>
         <p>Now, what about the things that I'm interested in? Well...</p>
-        <div class="card bg green">
+        <div class="b-card b-card--surface b-card--green">
           <h2>Theme Parks</h2>
           <p>I LOVE theme parks. I love to learn more about them, experience new rides and attractions, and delve into the histories of old parks and rides (particularly stuff from <em>EPCOT Center</em>). I particularly love Disney and Universal's resorts, as I have a lot of fond memories there. As a result, many of my creative projects are related to or have been inspired by theme parks. I'm also the creator of an internet webseries entitled <a href="https://tdrz.carrd.co/"><strong>The Dark Ride Zone</strong></a>, which goes over the history and stories of theme parks, their rides, and everything in-between.</p>
           <h2>Games</h2>
           <p>I enjoy playing a wide variety of games from as many platforms as I can. One of my all-time favorites is <em>Minecraft Java</em> as it provides me an outlet for me to express my love of voxel sandboxes, programming, and theme park creation (see <a href="./portfolio/mctp.html"><em>MCTP</em></a> section for more details). I'm also a huge fan of <em>Splatoon</em>, <em>A Hat In Time</em>, <em>Deltarune</em>, <em>Cult of the Lamb</em>,<em>Paper Mario</em>, <em>Portal</em>, <em>Spelunky,</em> <em>Kirby</em>, <em>Rhythm Heaven</em>, <em>Pokemon Mystery Dungeon</em>, <em>Pressure (Roblox)</em>, <em>The Stanley Parable</em>, etc...</p>
-          <p class="footnote">The "Interests" page also has a ton of details on other things I obsess over outside of just theme parks and games... probably worth a look-see if you're intrigued.</p>
+          <p class="b-prose-note">The "Interests" page also has a ton of details on other things I obsess over outside of just theme parks and games... probably worth a look-see if you're intrigued.</p>
         </div>
         <p>...and that's everything! Yep, nothing more to see here.</p>
         <p>...</p>
         <p>Oh, what, you want to know more? Uh, well...</p>
-        <div class="card blue bg">
+        <div class="b-card b-card--blue b-card--surface">
           <h2>Personality</h2>
           <p>I've said that if I wasn't majoring in Computer Science, I'd probably be in Psychology because I find personality systems and human interaction dynamics fascinating. About me, I'm naturally introverted, passionate in the things I do, and want to leave this world better than it was when I entered it. On the downside though, I'm not the best with criticism, I'm a HEAVY perfectionist in everything I do, and I can burn myself out easily. I'm also pretty sure I'm neurodivergent too, although I don't have any sort of "official" diagnosis.</p>
           <p>You can probably guess a lot about me from this website I've made. That's, uh, kind of why this website exists, so I can get out of my shell somewhat. So if you've made it this far, uh... thanks!</p>
@@ -112,7 +111,7 @@
 
         <p>Okay, yep that's everything! I've told you a <em>lot more personal details than I was expecting to include here,</em> and there's nothing left here to read now so <em>wait what is that section below this text doing there</em></p>
 
-        <div class="card black bg">
+        <div class="b-card b-card--black b-card--surface">
           <h3>Q&A</h3>
           <ul style="line-height: 20px; display: flex; flex-direction: column; gap: calc(var(--padding) * 0.75);">
             <li><strong>Can I use a song/graphic/other thing you made for a project of mine?</strong> Please get in touch with me on the WebCentral Discord! Or, you can also just leave a comment on that thing and I'll very likely see it and respond if I can.</li>
@@ -129,16 +128,16 @@
         
       </section>
 
-      <img class="fade-img"src="#">
+      <img class="b-bg-fade"src="#">
     </main>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-marquee">
-          <div class="footer-marquee-track">
-            <div class="footer-marquee-content">
+    <footer class="b-footer">
+      <div class="b-footer__primary">
+        <div class="b-footer__marquee">
+          <div class="b-footer__track">
+            <div class="b-footer__ribbon">
               <!-- Content in here will be duplicated for marquee effect as needed -->
-              <a class="footer-card" href="https://www.firefox.com/"><img src="/images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
+              <a class="b-footer__link" href="https://www.firefox.com/"><img src="images/buttons/firefox.gif" alt="This site is best with Firefox"></a>
               <p><strong>This is an alternate version of my portfolio site</strong> meant for CSS project submission. To see the original hosted on Neocities, <a href="https://thewebcon.neocities.org/">click here!</a></p>
               <!-- Content in here will be duplicated for marquee effect as needed -->
             </div>
